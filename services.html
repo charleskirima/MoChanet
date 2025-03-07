@@ -1,0 +1,4294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoCha</title>
+  <style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121826; /* Deep navy */
+  color: #f0f0f0;
+  margin: 0;
+  padding: 1%;
+  box-sizing: border-box;
+}
+  
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps items aligned properly */
+  padding: 15px 5%;
+  background: linear-gradient(90deg, #ff2e63, #252a34);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  border-bottom: 3px solid #08d9d6;
+  height: 60px;
+  width: 90%;
+}
+
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 2%;
+    height: auto;
+    width:95%;
+  }
+}
+
+
+/* Logo Styling */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); /* Futuristic Font */
+
+h1 {
+  font-family: 'Orbitron', sans-serif;  /* Robotic font */
+  font-size: 60px;  /* Bold and prominent */
+  text-transform: uppercase;  /* Adds a futuristic feel */
+  background: linear-gradient(90deg, #fff, #08d9d6); /* Metallic effect */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  /* Chrome-based text gradient */
+  text-align: center;
+  letter-spacing: 4px; /* Spaced-out letters for a digital look */
+  position: relative;
+transform: translateX(-15%);
+}
+
+/* Optional: Glowing Effect for Extra Tech Vibe */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 4px;
+  background: cyan;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px cyan, 0 0 15px rgba(0, 255, 255, 0.8); /* Neon glow */
+  border-radius: 2px;
+}
+
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Navigation Links */
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
+  background: rgba(255, 46, 99, 0.15);
+}
+
+/* Hover Effects for Links */
+nav a:hover {
+  color: #ff2e63;
+  background: rgba(255, 46, 99, 0.3);
+  box-shadow: 0 4px 6px rgba(255, 46, 99, 0.4);
+  transform: scale(1.1);
+}
+
+/* Login Icon Styling */
+nav .login-icon {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background: beige;
+  transition: all 0.3s ease-in-out;
+}
+
+nav .login-icon:hover {
+  background: rgba(255, 46, 99, 0.3);
+  color: #ff2e63;
+  transform: scale(1.2);
+  box-shadow: 0 4px 6px rgba(255, 46, 99, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  nav .login-icon {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav .login-icon {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Light overlay */
+  mix-blend-mode: screen; /* Blends light with dark areas */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 100px 50px;
+  background: url('20250221_131847.jpg') no-repeat center/cover;
+  height: 470px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  
+}
+
+/* Dark Overlay for Better Text Readability */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Styling for the Heading */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 40%;
+max-height: 115%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+
+.hero-text h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.6rem;
+    font-weight: 800;
+    color: #00E0FF; /* Electric Blue from the neon cyberpunk logo */
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px rgba(0, 224, 255, 0.8);
+}
+
+.hero h2 span:nth-child(1) {
+  color: white; /* Clean and readable */
+}
+
+.hero h2 span:nth-child(2) {
+  color: lightblue; /* Soft blue for contrast */
+}
+
+.hero h2 span:nth-child(3) {
+  color: beige; /* Warm tone for balance */
+}
+
+.hero p {
+  color: white; /* Keeps it clean */
+}
+
+
+
+/* 💥 Button on Bottom Right */
+.hero button {
+  position: absolute;
+  bottom: 25px;
+  right: 255px;
+  padding: 15px 35px;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #ff2e63, #08d9d6);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* 💥 Button Hover Effect */
+.hero button:hover {
+  transform: scale(1.1) rotate(2deg);
+  background: linear-gradient(90deg, #08d9d6, #ff2e63);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* 💥 Button Active (Click) Effect */
+.hero button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* 🛠️ Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 span {
+    margin-bottom: 8px;
+  }
+
+  .hero button {
+    position: static;
+    margin: 20px auto 0;
+    display: block;
+  }
+}
+
+
+
+    /* Footer Section */
+    footer {
+      padding: 50px;
+      background: #1a1a1a;
+      text-align: center;
+    }
+/* Footer Containers */
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Clickable Footer Boxes */
+.footer-container {
+  text-align: center;
+  width: 160px;
+  border: 2px solid #ff2e63;
+  border-radius: 15px;
+  padding: 25px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Footer Containers */
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Clickable Footer Boxes */
+.footer-container {
+  text-align: center;
+  width: 160px;
+  border: 2px solid #ff2e63;
+  border-radius: 15px;
+  padding: 25px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Dark Grey Background for Icons, Red Icons & Thick Blue Border */
+.footer-container .icon {
+  background: #2c2c2c; /* Dark Grey Background */
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #ff2e63; /* Red Icon Color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border: 5px solid #08d9d6; /* Thick Blue Border */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Footer Text Styles */
+.footer-container h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ff2e63;
+}
+
+.footer-container p {
+  font-size: 0.9rem;
+  color: #a9a9a9;
+}
+
+/* Hover Effects */
+.footer-container:hover {
+  background: rgba(255, 46, 99, 0.1);
+  box-shadow: 0px 0px 15px rgba(255, 46, 99, 0.4);
+  transform: scale(1.05);
+}
+
+.footer-container:hover .icon {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(8, 217, 214, 0.5); /* Glow Effect on Hover */
+}
+
+
+/* Footer Text Styles */
+.footer-container h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ff2e63;
+}
+
+.footer-container p {
+  font-size: 0.9rem;
+  color: #a9a9a9;
+}
+
+/* Hover Effects */
+.footer-container:hover {
+  background: rgba(255, 46, 99, 0.1);
+  box-shadow: 0px 0px 15px rgba(255, 46, 99, 0.4);
+  transform: scale(1.05);
+}
+
+.footer-container:hover .icon {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+/* 🛠️ Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-containers {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+}
+
+
+social-icons {
+    display: flex;
+    gap: 25px;
+    justify-content: center; /* Adjust as needed */
+}
+
+.social-icons a {
+    font-size: 44px; /* Adjust size */
+    color: #f0f0f0; /* Adjust to match your theme */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff4d4d; /* Highlight on hover */
+}
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #a9a9a9;
+    }
+    .footer-bottom span {
+      color: #ff2e63;
+    }
+    
+    
+   /* Footer Containers */
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual Footer Boxes */
+.footer-container {
+  flex: 1;
+  min-width: 220px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #1a1a1a, #000);
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.footer-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+}
+
+/* Icon Styles */
+.icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+  display: block;
+  color: #ff0033;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.9);
+}
+
+/* Social Icons with Neon Glow */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 25px;
+}
+
+.social-icons a {
+  font-size: 30px;
+  color: #ff0033;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Social Icons Container */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  position: relative;
+}
+
+/* Individual Social Icons */
+.social-icons a {
+  font-size: 30px;
+  color: #ff0033;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Hover Effect - Scale & Glow */
+.social-icons a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Tooltip Styling */
+.social-icons a::after {
+  content: attr(data-name); /* Uses the data-name attribute */
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show Tooltip on Hover */
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+ 
+    
+     /* Button Styling */
+.start-project-btn {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #ff2e63, #08d9d6);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.start-project-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 46, 99, 0.7);
+}
+
+/* Modal Styling */
+.modalproject {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contentproject {
+  background: #252a34;
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+  color: white;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 15px rgba(255, 46, 99, 0.7);
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+.close:hover {
+  color: #ff2e63;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form label {
+  text-align: left;
+  font-weight: bold;
+}
+form input, form select, form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+form textarea {
+  height: 80px;
+  resize: none;
+}
+form button {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 1.1rem;
+  background: #ff2e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+form button:hover {
+  background: #08d9d6;
+}
+
+/* Extra Actions */
+.extra-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.extra-options a {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+.consultation {
+  background: #08d9d6;
+  color: white;
+}
+.consultation:hover {
+  background: #ff2e63;
+}
+.whatsapp {
+  background: #25d366;
+  color: white;
+}
+.whatsapp:hover {
+  background: #128c7e;
+}
+ 
+  /* 🔘 Login Icon */
+.login-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
+.login-icon:hover {
+  background: rgba(255, 46, 99, 0.3);
+}
+
+/* 📌 MODAL STYLES */
+.modallogin {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* 📍 MODAL CONTENT */
+.modallogin-content {
+  background: #252a34;
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 46, 99, 0.5);
+}
+
+/* ❌ Close Button */
+.close-btn {
+  font-size: 1.5rem;
+  color: #ff2e63;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* 🔳 Input Fields */
+.modallogin-content input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #1b1f27;
+  color: #fff;
+}
+
+/* 🔍 Password Wrapper */
+.password-wrapper {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* 📜 Terms & Conditions */
+.terms {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #fff;
+}
+.terms input {
+  margin-right: 100px;
+}
+.terms a {
+  color: #ff2e63;
+  text-decoration: none;
+}
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* 🚀 Buttons */
+#loginSubmit, #signUpSubmit {
+  width: 100%;
+  padding: 12px;
+  background: #ff2e63;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+#loginSubmit:hover, #signUpSubmit:hover {
+  background: #08d9d6;
+}
+
+/* ✅ SUCCESS POP-UP */
+.success-popup {
+  display: none;
+  position: fixed;
+  bottom: 50%;
+  right: 40%;
+  background: #28a745;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+ /* 🔗 Styling for Links */
+.modallogin-content a {
+  color: #ff2e63;  /* Red color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.modal-content a:hover {
+  color: #08d9d6; /* Changes to cyan on hover */
+  text-decoration: underline;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.2); /* Subtle highlight */
+  border-radius: 2px;
+}
+
+ 
+.divider {
+  width: 100%;
+  height: 10px; /* Adjust thickness */
+  background: linear-gradient(  
+    to right,  
+    #b8b8b8,  /* Light silver */
+    #e0e0e0,  /* Brighter silver */
+    #b8b8b8,  
+    #707070,  /* Darker metal tone */
+    #b8b8b8,  
+    #e0e0e0,  
+    #b8b8b8  
+  );  
+  border-radius: 6px; /* Slightly rounded edges for realism */
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3),  
+              0 -1px 2px rgba(0, 0, 0, 0.2); /* Light and shadow effect */
+  position: relative;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  40% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  80% { transform: scale(1); }
+  90% { transform: scale(1.02); }
+}
+
+.start-project-btn {
+  animation: heartbeat 4s ease-in-out infinite;
+  animation-delay: 3s;
+}
+/* Footer Background */
+footer {
+  background: linear-gradient(90deg, #0e0e0e, #1a1a1a);
+  padding: 50px 20px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0px -5px 15px rgba(255, 0, 0, 0.4);
+}
+
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+            filter: brightness(0.8) contrast(1.1);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+          /* Main Text Styling */
+        #text-container {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+            color: #fff;
+        }
+
+        /* Static Text */
+        .static-text {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Changing Words */
+        #changing-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00ffcc, #00aaff, #ff00cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Final Message */
+        .final-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ff00cc, #00ffcc, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+        
+                /* Glow Animation */
+        @keyframes glow {
+            0% {
+                filter: brightness(1);
+            }
+            100% {
+                filter: brightness(1.2);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #text-container {
+                font-size: 2rem;
+            }
+            .carousel {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #text-container {
+                font-size: 1.5rem;
+            }
+            .carousel {
+                height: 450px;
+            }
+        }
+/* General Page Styling */
+.section8 {
+    font-family: 'Orbitron', sans-serif;
+    background: white;
+    color: #0a0a0a;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Popup Overlay */
+.popup1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+/* Popup Content */
+.popup-content1 {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 60%;
+    max-height: 80vh; /* Ensures it doesn't exceed 80% of viewport height */
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Enables scrolling inside popup */
+}
+
+
+/* Close Button */
+.close-btn, .close-second-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+}
+
+.close-btn:hover, .close-second-btn:hover {
+    color: #ff3b3b;
+    transform: scale(1.1);
+}
+
+/* Popup Overlay */
+.popup2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+/* Popup Content */
+.popup-content2 {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 70%;
+    max-height: 80vh; /* Ensures it doesn't exceed 80% of viewport height */
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Enables scrolling inside popup */
+}
+
+
+/* Close Button */
+.close-btn, .close-second-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+}
+
+.close-btn:hover, .close-second-btn:hover {
+    color: #ff3b3b;
+    transform: scale(1.1);
+}
+
+/* Popup Overlay */
+.popup3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+/* Popup Content */
+.popup-content3 {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh; /* Ensures it doesn't exceed 80% of viewport height */
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Enables scrolling inside popup */
+}
+
+
+/* Close Button */
+.close-btn, .close-second-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+}
+
+.close-btn:hover, .close-second-btn:hover {
+    color: #ff3b3b;
+    transform: scale(1.1);
+}
+
+/* Popup Overlay */
+.popup4 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+/* Popup Content */
+.popup-content4 {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 700px;
+    max-height: 90vh; /* Ensures it doesn't exceed 80% of viewport height */
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    overflow-y: auto; /* Enables scrolling inside popup */
+}
+
+/* Icon Grid Layout */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive */
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Ensure exactly 3 per row on larger screens */
+@media (min-width: 600px) {
+    .icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ensure 2 per row on medium screens */
+@media (max-width: 599px) {
+    .icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Single column for small screens */
+@media (max-width: 400px) {
+    .icon-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Icon Card */
+.icon-card {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-card:hover {
+    background: #e0e0e0;
+    transform: translateY(-5px);
+    border-color: #003366;
+    box-shadow: 0 6px 15px rgba(0, 51, 102, 0.3);
+}
+/* Icon Style */
+.icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #003366;
+}
+
+/* Popup Title */
+#modal-title, #second-modal-title {
+    margin-bottom: 12px;
+    color: #0a0a0a;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .popup-content {
+        width: 95%;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Button Container */
+.product-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 30px;
+}
+
+/* CTA Buttons */
+.cta-button {
+    padding: 14px 24px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #003366, #001a33);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.5);
+}
+
+
+
+
+/* Inside Section Buttons */
+.inside-button {
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #003366, #001a33);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.inside-button:hover {
+    opacity: 0.9;
+    transform: scale(1.15);
+}
+
+/* Active Inside Button */
+.active-inside-button {
+    background: linear-gradient(135deg, #ff3b3b, #ff8c00);
+    color: white;
+    font-size: 20px;
+    transform: scale(1.2);
+}
+
+/* Pump Animation */
+.pumping {
+    animation: pump 0.5s infinite alternate;
+}
+
+@keyframes pump {
+    from { transform: scale(1.2); }
+    to { transform: scale(1.05); }
+}
+
+/* Product Image */
+.product-image {
+    width: 100%; /* Stretch full width */
+    height: 750px; /* Increased height */
+    padding: 0;
+    margin: 0;
+    border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+    overflow: hidden;
+}
+
+/* Image Inside */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product Container */
+.product-container {
+    margin: 10px auto; /* Centers the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 96.5%;
+    background: #f0f0f0;
+}
+
+/* Product Info */
+.product-info {
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+
+/* Unfinished Project Section */
+.unfinished-project {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f0f0f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 98%;
+    margin: 40px auto;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Upload Box */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 7px dashed #003366;
+    border-radius: 16px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: #f9f9f9;
+    text-align: center;
+    max-width: 75%;
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+/* Hover Effect */
+.upload-box:hover {
+    border-color: #001a33;
+    background: #fff;
+    transform: scale(1.02);
+}
+
+/* Upload Text */
+.upload-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Upload Preview */
+.upload-preview {
+    font-size: 15px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Input Field */
+.input-field {
+    width: 90%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+    background: #fff;
+}
+
+/* Input Field Focus */
+.input-field:focus {
+    border-color: #001a33;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 82, 82, 0.4);
+}
+
+/* Upload Button */
+.glitch-button {
+    width: 95%;
+    padding: 14px;
+    background: background: linear-gradient(135deg, #003366, #001a33);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 82, 82, 0.3);
+}
+
+/* Button Hover Effect */
+.glitch-button:hover {
+    background: background: linear-gradient(135deg, #003366, #001a33);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 82, 82, 0.5);
+}
+
+/* Button Click Effect */
+.glitch-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .unfinished-project {
+        max-width: 90%;
+        padding: 40px 15px;
+    }
+    
+    .upload-box {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+
+
+
+/* Buttons */
+.quiz-button, .exit-button {
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.quiz-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.exit-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.quiz-button:hover, .exit-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.close-quiz-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Question Container */
+#quiz-question-container {
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Buttons */
+button {
+    background-color: #ff3b3b; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+#back-quiz {
+    background-color: #7f8c8d; /* Gray */
+}
+
+#back-quiz:hover {
+    background-color: #636e72;
+}
+
+/* Summary Styling */
+#quiz-summary {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#quiz-summary p {
+    margin: 10px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animated-border {
+    border: 7px dashed #003366;
+    animation: borderMove 1s infinite linear;
+}
+
+@keyframes borderMove {
+    0% { border-style: dashed; }
+    50% { border-style: solid; }
+    100% { border-style: dashed; }
+}
+/* Product Section - More OOMPH */
+.products-section {
+    text-align: center;
+    padding: 5px 5px;
+    background: linear-gradient(135deg, beige, white);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Buttons Container */
+.product-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Stylish CTA Buttons */
+.cta-button {
+        padding: 14px 24px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #003366, #001a33);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Glowing Hover Effect */
+.cta-button:hover {
+    background: linear-gradient(45deg, #ff1744, #d50000);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(255, 23, 68, 0.5);
+}
+
+/* Button Ripple Effect */
+.cta-button::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.4s, opacity 0.4s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+.cta-button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .cta-button {
+        width: 100%;
+        max-width: 380px;
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.product-description {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Adjust as needed */
+    
+}
+
+.product-description h2 {
+    color: #e63946;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* 🔹 Underline Effect */
+.product-description h2::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #e63946, #ff5733);
+    margin: 8px auto 0;
+    border-radius: 3px;
+    transition: width 0.3s ease-in-out;
+}
+
+.product-description h2:hover::after {
+    width: 70%;
+}
+
+
+  .product-description ul {
+    padding-left: 20px;
+  }
+
+  .product-description li {
+    margin-bottom: 8px;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: #e63946;
+  }
+
+  .checkmark {
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .why-choose {
+    background: #ffffff;
+    padding: 15px;
+    border-left: 4px solid #e63946;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+  
+
+
+
+/* 🔹 Close Button */
+.close-quiz-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff4b2b;
+    transition: 0.3s;
+}
+
+.close-quiz-btn:hover {
+    color: #ff416c;
+}
+
+/* 🔹 Title */
+#quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff416c;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Progress Bar */
+#quiz-progress-container {
+    width: 100%;
+    height: 12px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#quiz-progress {
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    transition: width 0.4s ease-in-out;
+}
+
+/* 🔹 Buttons */
+button {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 75, 43, 0.5);
+}
+
+#back-quiz {
+    background: linear-gradient(90deg, #333, #444);
+}
+
+#back-quiz:hover {
+    box-shadow: 0px 0px 10px rgba(150, 150, 150, 0.5);
+}
+
+/* 🔹 Quiz Question Container */
+#quiz-question-container {
+    background: beige;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(255, 75, 43, 0.3);
+}
+
+/* 📌 Quiz Summary Styles */
+#quiz-summary {
+    font-size: 18px; /* Increased font size */
+    font-weight: 500;
+    line-height: 1.6;
+    color: #333;
+    background: beige;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏷 Labels */
+#quiz-summary strong {
+    font-size: 20px; /* Make labels bigger */
+    color: #003366;
+}
+
+/* 🔘 Buttons */
+#summary-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#summary-buttons button {
+    font-size: 18px; /* Increase button text size */
+    padding: 12px 18px;
+    font-weight: bold;
+}
+
+
+/* 🎨 General Quiz Styles */
+#quiz-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* 📌 Question Styles */
+.quiz-question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ✏️ Input & Select Fields */
+#quiz-answer, select {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+#quiz-answer:focus, select:focus {
+    border-color: #ff5c5c;
+}
+
+/* 📞 Phone Input Container */
+.phone-input {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-input select {
+    width: 35%;
+    min-width: 100px;
+}
+
+/* 📌 Choice Buttons */
+.choice-container label {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.choice-container label:hover {
+    background: #ff5c5c;
+    color: white;
+}
+
+/* 🏆 Progress Bar */
+#quiz-progress-container {
+    width: 100%;
+    background: #f3f3f3;
+    border-radius: 5px;
+    margin: 20px 0;
+    height: 10px;
+    overflow: hidden;
+}
+
+#quiz-progress {
+    height: 100%;
+    background: #ff5c5c;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* 🔘 Buttons */
+.quiz-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: #ff5c5c;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #e74c4c;
+}
+
+button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
+  
+  </style>
+ <link rel="shortcut icon" href="Ik.png" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">   
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>MoCha</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact Us</a>
+<!-- 👤 Login Icon -->
+<span class="login-icon" id="loginIcon">👤</span>
+  </nav>
+</header><br>
+ <center>   <div class="divider"></div> <!-- Thick blue line --></center>
+<br>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h2>
+      <span>Let us</span>
+      <span>Build your<br> dreams</span>
+      <span>And ideas.</span>
+    </h2>
+
+  </div>
+<!-- Button to Open Modal -->
+<button class="start-project-btn" onclick="openModal()">Start Your Project</button>
+
+</section><br>
+ <center>   <div class="divider"></div> <!-- Thick blue line --></center>
+<br>
+<!-- Project Inquiry Modal -->
+<div id="projectModal" class="modalproject">
+  <div class="modal-contentproject">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Start Your Project</h2>
+    
+    <!-- Inquiry Form -->
+    <form id="projectForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="project-type">Project Type</label>
+      <select id="project-type">
+        <option value="Website">Website</option>
+        <option value="App">App</option>
+        <option value="Game">Game</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="budget">Budget Range</label>
+      <select id="budget">
+        <option value="Below $500">Below $500</option>
+        <option value="$500 - $2000">$500 - $2000</option>
+        <option value="$2000 - $5000">$2000 - $5000</option>
+        <option value="Above $5000">Above $5000</option>
+      </select>
+
+      <label for="description">Project Description</label>
+      <textarea id="description" placeholder="Briefly describe your project..." required></textarea>
+
+      <button type="submit">Submit Inquiry</button>
+    </form>
+
+    <!-- Additional Actions -->
+    <div class="extra-options">
+      <a href="https://calendly.com/kirimak09/30min" target="_blank" class="consultation">📅 Book a Consultation</a>
+      <a href="https://wa.me/yourwhatsapplink?text=Hi! I’m interested in a project with MoCha." target="_blank" class="whatsapp">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- 🟢 LOGIN MODAL -->
+<div id="loginModal" class="modallogin">
+  <div class="modallogin-content">
+    <span class="close-btn">&times;</span>
+    <h3>Login</h3>
+    <input type="email" id="loginEmail" placeholder="Email">
+    
+    <div class="password-wrapper">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <span class="toggle-password" onclick="togglePassword('loginPassword')">👁️</span>
+    </div>
+
+  <span>  <button id="loginSubmit">Login</button></span>
+    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="#" id="openSignUp">Sign Up</a></p>
+  </div>
+</div>
+
+<!-- 🔵 SIGN-UP MODAL -->
+<div id="signUpModal" class="modallogin">
+  <div class="modallogin-content">
+    <span class="close-btn">&times;</span>
+    <h3>Sign Up</h3>
+    <input type="text" id="signUpName" placeholder="Full Name">
+    <input type="email" id="signUpEmail" placeholder="Email">
+    <input type="text" id="signUpPhone" placeholder="Phone Number">
+
+    <div class="password-wrapper">
+      <input type="password" id="signUpPassword" placeholder="Create Password">
+      <span class="toggle-password" onclick="togglePassword('signUpPassword')">👁️</span>
+    </div>
+
+    <div class="password-wrapper">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" id="termsCheckbox">
+      <label for="termsCheckbox">I agree to the <a href="#">Terms & Conditions</a></label>
+    </div>
+
+    <button id="signUpSubmit">Sign Up</button>
+    <p>Already have an account? <a href="#" id="openLogin">Login</a></p>
+  </div>
+</div>
+
+<!-- ✅ SUCCESS MESSAGE POP-UP -->
+<div id="successPopup" class="success-popup">
+  <p id="successMessage"></p>
+</div>
+
+<div class="section8">
+<!-- Section with Top Navigation Buttons -->
+<br>
+<div class="products-section">
+    <div class="product-buttons">
+        <button class="cta-button" data-target="website-section">Get Your Website</button>
+        <button class="cta-button" data-target="app-section">Build Your App</button>
+        <button class="cta-button" data-target="game-section">Create Your Game</button>
+        <button class="cta-button" data-target="hosting-section">Hosting & Domain</button>
+        <button class="cta-button" data-target="patents-section">Patents & Services</button>
+<button id="scrollToUploadBox" class="cta-button">Have an Unfinished Project?</button>
+
+    </div>
+</div>
+<br>
+<!-- Target Sections -->
+<section id="website-section" class="scroll-section">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="Hy.webp" alt="Website Development">
+        </div>
+        <div class="product-info">
+        <center>
+<div class="product-description">
+  <h2>🖥Website Development</h2>
+  <p>A strong online presence starts with a professionally designed website. Whether you need a business website, e-commerce store, personal blog, or a custom solution, we offer <span class="highlight">end-to-end website development services</span> to bring your vision to life.</p>
+
+  <div class="why-choose">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li><b>User-Friendly, Scalable, and Future-Proof Solutions</b></li>
+      <li><b>Fast Loading Speeds & Secure Websites</b></li>
+      <li><b>Custom Features & Integrations Based on Your Needs</b></li>
+    </ul>
+  </div>
+
+  <p>We build websites that <b>not only look great but also perform exceptionally well</b> to help your business grow.</p>
+</div><br>
+            <button class="inside-button" id="btn-website">Get Your Website</button>
+        </div>
+    </div>
+</section>
+
+<section id="app-section" class="scroll-section">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="Uis.webp" alt="App Development">
+        </div>
+        <div class="product-info">
+<div class="product-description">
+  <h2>📱  App Development</h2>
+  <p>Mobile apps drive engagement, efficiency, and revenue. We create <span class="highlight">custom mobile applications</span> designed for businesses, startups, and individuals, ensuring smooth user experiences and top-tier performance.</p>
+
+
+  <div class="why-choose">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li><b>Optimized Performance & Scalability</b></li>
+      <li><b>Custom Features & API Integrations</b></li>
+      <li><b>Fast, Secure, & User-Friendly Apps</b></li>
+    </ul>
+  </div>
+
+  <p>Whether you need a simple app or a complex platform, we build <b>robust, high-performance applications</b> that cater to your needs.</p>
+  </div>
+          <br> <button class="inside-button" id="btn-app">Build Your App</button>
+        </div>
+    </div>
+</section>
+
+<section id="game-section" class="scroll-section">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="Dh.webp" alt="Game Development">
+        </div>
+        <div class="product-info">
+
+<!-- Game Development -->
+<div class="product-description">
+  <h2>🎮 Game Development</h2>
+  <p>Transform your game idea into reality with <span class="highlight">immersive, engaging, and high-performance</span> games. We develop 2D, 3D, and multiplayer games across various platforms.</p>
+
+
+
+  <div class="why-choose">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li><b>High-Quality Graphics & Smooth Gameplay</b></li>
+      <li><b>Innovative Mechanics & Unique Storylines</b></li>
+      <li><b>Scalable, Future-Proof Game Architecture</b></li>
+    </ul>
+  </div>
+
+  <p>We create games that <b>engage, entertain, and keep players coming back for more.</b></p>
+</div><br>
+            <button class="inside-button" id="btn-game">Create Your Game</button>
+        </div>
+    </div>
+</section>
+
+<section id="hosting-section" class="scroll-section">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="Kl.webp" alt="Hosting & Domain">
+        </div>
+        <div class="product-info">
+            <h3 class="product-title">Hosting & Domains</h3>
+<!-- Hosting & Domains -->
+<div class="product-description">
+  <h2>🌐 Hosting & Domains</h2>
+  <p>Your website’s performance, security, and reliability start with the right hosting solution. We provide <span class="highlight">fast, secure, and scalable hosting</span> for businesses, individuals, and enterprises.</p>
+
+
+
+  <div class="why-choose">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li><b>99.9% Uptime Guarantee</b></li>
+      <li><b>Blazing-Fast Loading Speeds</b></li>
+      <li><b>Robust Security & Regular Backups</b></li>
+    </ul>
+  </div>
+
+  <p>We ensure your website <b>runs smoothly, securely, and efficiently</b> with top-tier hosting solutions.</p>
+</div><br>
+            <button class="inside-button" id="btn-hosting">Hosting & Domain</button>
+        </div>
+    </div>
+</section>
+
+<section id="patents-section" class="scroll-section">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="Gh.webp" alt="Patents & Legal Services">
+        </div>
+        <div class="product-info">
+<!-- Patents & Legal Services -->
+<div class="product-description">
+  <h2> ⚖  Patents & Legal Services</h2>
+  <p>Protect your ideas, brand, and business with our <span class="highlight">comprehensive legal services</span>. From patent filing to business registration, we help safeguard your intellectual property and legal needs.</p>
+
+  <h3>Our Services Include:</h3>
+  <ul>
+    <li><span class="checkmark">✔</span><b>Patent Filing & Protection</b> – Secure your inventions with expert legal guidance.</li>
+    <li><span class="checkmark">✔</span><b>Trademark Registration</b> – Protect your brand identity.</li>
+    <li><span class="checkmark">✔</span><b>Copyright & IP Protection</b> – Ensure your creative works are legally protected.</li>
+    <li><span class="checkmark">✔</span><b>Business Registration & Compliance</b> – Get legally registered and compliant.</li>
+    <li><span class="checkmark">✔</span><b>Legal Contracts & Agreements</b> – Draft and review legally binding agreements.</li>
+  </ul>
+
+  <div class="why-choose">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li><b>Expert Legal Consultation</b></li>
+      <li><b>Fast & Hassle-Free Process</b></li>
+      <li><b>Affordable & Transparent Pricing</b></li>
+    </ul>
+  </div>
+
+  <p>We help businesses and individuals <b>secure their intellectual property, navigate legal complexities, and stay compliant.</b></p>
+</div><br>
+            <button class="inside-button" id="btn-patents">Patents & Services</button></center>
+        </div>
+    </div>
+    </section>
+    
+
+<!-- Unfinished Project Section -->
+<section class="unfinished-project">
+
+    
+    <div class="product-description">
+  <h2> 🚀  Have an Unfinished Project?</h2>
+  <p>
+     Stuck with an incomplete project? We specialize in rescuing and reviving unfinished projects. Whether it's a half-built website, an app that needs debugging, or a stalled game development project, <span class="highlight"> we step in to bring it across the finish line.</span>  </p>
+
+
+  <div class="why-choose">
+    <h3>Why Let Us Handle Your Unfinished Project?*</h3>
+    <ul>
+      <li><b>Save Time & Avoid Restarting from Scratch</b></li>
+      <li><b>Recover Lost Investments & Avoid Wasting Resources</b></li>
+      <li><b>Work with Experts Who Can Complete Your Vision</b></li>
+    </ul>
+  </div>
+
+</div>
+    <p class="section-subtitle">Upload your files and let us help you bring your project to completion.</p>
+    
+<div class="upload-box" onclick="document.getElementById('fileInput').click()">
+    <p class="upload-text">📂 Drag & Drop or Click to Upload</p>
+    <input type="file" id="fileInput" onchange="previewFile()" hidden>
+    <p class="upload-preview" id="filePreview">No file selected.</p>
+</div>
+
+<input type="text" class="input-field" id="projectIdea" placeholder="Describe your project idea...">
+<input type="number" class="input-field" id="budget" placeholder="Budget ($)">
+
+<button class="glitch-button" onclick="submitToWhatsApp()">Submit Project</button>
+</section>
+
+
+
+
+<!-- First Popup -->
+<div id="popup-modal" class="popup1">
+    <div class="popup-content1">
+        <span class="close-btn">&times;</span>
+        <h2 id="modal-title"></h2>
+        <div id="icon-container" class="icon-grid"></div>
+    </div>
+</div>
+
+<!-- Second Popup -->
+<div id="second-popup-modal" class="popup2">
+    <div class="popup-content2">
+        <span class="close-second-btn">&times;</span>
+        <h2 id="second-modal-title"></h2>
+        <div id="second-modal-content"></div>
+
+    </div>
+</div>
+
+<!-- Quiz Modal -->
+<div id="quiz-modal" class="popup3">
+    <div class="popup-content3">
+        <span class="close-quiz-btn">&times;</span>
+        <h2 id="quiz-title"></h2>
+       <div id="quiz-progress-container">
+    <div id="quiz-progress">0%</div>
+</div>
+ 
+        <div id="quiz-question-container"></div>
+        <button id="back-quiz" style="display: none;">Back</button>
+        <button id="next-quiz">Next</button>
+    </div>
+</div>
+
+<!-- Quiz Summary Modal -->
+<div id="quiz-summary-modal" class="popup4">
+    <div class="popup-content4">
+        <h2>Survey Summary</h2>
+        <div id="quiz-summary"></div>
+        <button id="redo-quiz">Redo</button>
+        <button id="submit-quiz">Submit</button>
+    </div>
+</div>
+
+</div>
+
+  <!-- Footer -->
+  <footer>
+  <div class="footer-containers">
+    <a href="index.html" class="footer-container">
+      <div class="icon">🏠</div>
+      <h3>Home</h3>
+      <p>Return to our homepage and explore what we have to offer.</p>
+    </a>
+    <a href="services.html" class="footer-container">
+      <div class="icon">🔧</div>
+      <h3>Services</h3>
+      <p>Discover our range of services, from web development to app creation.</p>
+    </a>
+    <a href="portfolio.html" class="footer-container">
+      <div class="icon">📂</div>
+      <h3>Portfolio</h3>
+      <p>Take a look at our completed projects and past work.</p>
+    </a>
+    <a href="contact.html" class="footer-container">
+      <div class="icon">📞</div>
+      <h3>Contact Us</h3>
+      <p>Reach out to us for inquiries, collaborations, or support.</p>
+    </a>
+  </div>
+
+<div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=100054273770098" data-name="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/KinyuaKirima" data-name="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/mocha.dev/" data-name="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/+254737377851" data-name="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <div class="footer-bottom">
+      <p><span>Terms of Service</span> | Powered by <span>MoCha</span></p>
+       <p>&copy; 2025 MoCha. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+
+<script>
+document.getElementById("scrollToUploadBox").addEventListener("click", function () {
+    let uploadBox = document.querySelector(".unfinished-project");
+    
+    // Calculate exact position for precise scrolling
+    let offsetTop = uploadBox.getBoundingClientRect().top + window.scrollY;
+
+    // Smooth scroll to exact position
+    window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+    });
+
+    // Add animated border effect
+    uploadBox.classList.add("animated-border");
+
+    // Remove animation after 3 seconds
+    setTimeout(() => {
+        uploadBox.classList.remove("animated-border");
+    }, 8000);
+});
+
+    function previewFile() {
+        const fileInput = document.getElementById("fileInput");
+        const filePreview = document.getElementById("filePreview");
+        if (fileInput.files.length > 0) {
+            filePreview.innerText = "Selected: " + fileInput.files[0].name;
+        } else {
+            filePreview.innerText = "No file selected.";
+        }
+    }
+
+    function submitToWhatsApp() {
+        const projectIdea = document.getElementById("projectIdea").value.trim();
+        const budget = document.getElementById("budget").value.trim();
+        const fileInput = document.getElementById("fileInput");
+        let fileText = fileInput.files.length > 0 ? "File uploaded: " + fileInput.files[0].name : "No file uploaded";
+
+        const phoneNumber = "254737377851"; // Replace with your WhatsApp number (e.g., "2348012345678")
+        
+        let message = `New Project Submission:\n\n` +
+                      `Project Idea: ${projectIdea}\n` +
+                      `Budget: $${budget}\n` +
+                      `${fileText}`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappURL, "_blank");
+    } 
+ // Open Modal
+function openModal() {
+  document.getElementById("projectModal").style.display = "flex";
+}
+
+// Close Modal
+function closeModal() {
+  document.getElementById("projectModal").style.display = "none";
+}
+
+// Close Modal when Clicking Outside
+window.onclick = function(event) {
+  let modal = document.getElementById("projectModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+document.getElementById("projectForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let projectType = document.getElementById("project-type").value.trim();
+    let budget = document.getElementById("budget").value.trim();
+    let description = document.getElementById("description").value.trim();
+
+    // Validate Input
+    if (name === "" || email === "" || description === "") {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    // Simulate Sending Data (Replace with actual backend integration)
+    console.log("Project Inquiry Submitted:", {
+        name, email, projectType, budget, description
+    });
+
+    // Show Confirmation Message
+    alert("Thank you! Your project inquiry has been submitted. We'll get back to you soon.");
+
+    // Close Modal & Reset Form
+    closeModal();
+    document.getElementById("projectForm").reset();
+
+    // WhatsApp Integration
+    let phoneNumber = "254737377851"; // Ensure this is in the correct format without spaces
+    let message = `Hello, I would like to inquire about a project:\n\n` +
+                  `👤 Name: ${name}\n` +
+                  `📧 Email: ${email}\n` +
+                  `📌 Project Type: ${projectType}\n` +
+                  `💰 Budget: ${budget}\n` +
+                  `📝 Description: ${description}`;
+
+    let encodedMessage = encodeURIComponent(message);
+    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappURL, "_blank");
+});
+ 
+// Get elements
+const loginIcon = document.getElementById("loginIcon");
+const loginModal = document.getElementById("loginModal");
+const signUpModal = document.getElementById("signUpModal");
+const closeButtons = document.querySelectorAll(".close-btn");
+const openSignUp = document.getElementById("openSignUp");
+const openLogin = document.getElementById("openLogin");
+const successPopup = document.getElementById("successPopup");
+const successMessage = document.getElementById("successMessage");
+
+// Open Login Modal
+loginIcon.addEventListener("click", () => {
+  loginModal.style.display = "flex";
+});
+
+// Open Sign-Up Modal from Login
+openSignUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginModal.style.display = "none";
+  signUpModal.style.display = "flex";
+});
+
+// Open Login Modal from Sign-Up
+openLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  signUpModal.style.display = "none";
+  loginModal.style.display = "flex";
+});
+
+// Close Modals
+closeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    loginModal.style.display = "none";
+    signUpModal.style.display = "none";
+  });
+});
+
+// Password Toggle
+function togglePassword(id) {
+  const field = document.getElementById(id);
+  field.type = field.type === "password" ? "text" : "password";
+}
+
+// Validate & Show Success Message
+function showSuccess(message) {
+  successMessage.innerText = message;
+  successPopup.style.display = "block";
+  setTimeout(() => {
+    successPopup.style.display = "none";
+  }, 3000);
+}
+
+// Handle Sign-Up
+document.getElementById("signUpSubmit").addEventListener("click", () => {
+  const name = document.getElementById("signUpName").value;
+  const email = document.getElementById("signUpEmail").value;
+  const phone = document.getElementById("signUpPhone").value;
+  const password = document.getElementById("signUpPassword").value;
+  const confirm = document.getElementById("confirmPassword").value;
+  const terms = document.getElementById("termsCheckbox").checked;
+
+  if (name && email && phone && password && confirm && terms) {
+    if (password === confirm) {
+      signUpModal.style.display = "none";
+      showSuccess("Successfully Signed Up!");
+    } else {
+      alert("Passwords do not match!");
+    }
+  } else {
+    alert("Please fill all fields & accept Terms!");
+  }
+});
+  
+  document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const targetSection = document.getElementById(this.dataset.target);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Reset all inside buttons
+            resetInsideButtons();
+
+            // Activate the button inside the section
+            const insideButton = targetSection.querySelector('.inside-button');
+            if (insideButton) {
+                insideButton.classList.add('active-inside-button');
+                insideButton.innerText = "Click Here";
+                
+                // Temporary pump effect
+                insideButton.classList.add('pumping');
+                setTimeout(() => insideButton.classList.remove('pumping'), 2000);
+            }
+        }
+    });
+});
+
+// Smooth Scroll and Button Highlighting
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".cta-button").forEach(button => {
+            button.addEventListener("click", function () {
+                const targetId = this.getAttribute("data-target"); // Get the target section ID
+                let targetButton;
+
+                // Map target sections to corresponding inside buttons
+                switch (targetId) {
+                    case "website-section":
+                        targetButton = document.getElementById("btn-website");
+                        break;
+                    case "app-section":
+                        targetButton = document.getElementById("btn-app");
+                        break;
+                    case "game-section":
+                        targetButton = document.getElementById("btn-game");
+                        break;
+                    case "hosting-section":
+                        targetButton = document.getElementById("btn-hosting");
+                        break;
+                    case "patents-section":
+                        targetButton = document.getElementById("btn-patents");
+                        break;
+                    default:
+                        return;
+                }
+
+                // Scroll to the target button smoothly
+                if (targetButton) {
+                    targetButton.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            });
+        });
+
+        // Handle the "Have an Unfinished Project?" button separately
+        document.getElementById("scrollToUploadBox").addEventListener("click", function () {
+            const uploadBox = document.querySelector(".upload-box");
+            if (uploadBox) {
+                uploadBox.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        });
+    });
+
+
+// Reset Inside Buttons
+function resetInsideButtons() {
+    document.querySelectorAll('.inside-button').forEach(button => {
+        button.classList.remove('active-inside-button', 'pumping');
+        button.innerText = button.getAttribute('data-original-text');
+    });
+}
+
+// Store Original Button Text
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.inside-button').forEach(button => {
+        button.setAttribute('data-original-text', button.innerText);
+    });
+});
+  
+// Open First Popup and Populate Icons
+document.querySelectorAll('.inside-button').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.stopPropagation();
+        const key = this.id;
+        const modal = document.getElementById("popup-modal");
+        const modalTitle = document.getElementById("modal-title");
+        const iconContainer = document.getElementById("icon-container");
+
+        if (data[key]) {
+            modalTitle.textContent = data[key].title;
+iconContainer.innerHTML = data[key].items.map(item => `
+    <div class="icon-card" onclick="openSecondPopup('${item.label}', '${item.description}', '${item.fullDescription}')">
+        <div class="icon">${item.icon}</div>
+        <h3>${item.label}</h3>
+        <p>${item.description}</p>
+    </div>
+`).join("");
+
+            modal.style.display = "flex";
+        }
+    });
+});
+
+// Open Second Popup with Full Description
+function openSecondPopup(title, description, fullDescription) {
+    const secondModal = document.getElementById("second-popup-modal");
+    const secondModalTitle = document.getElementById("second-modal-title");
+    const secondModalContent = document.getElementById("second-modal-content");
+
+    // Set modal title
+    secondModalTitle.textContent = title;
+
+    // Add full description, "What's Next", and buttons
+    secondModalContent.innerHTML = `
+
+        <p>${fullDescription}</p>
+        <hr>
+        <h3>What's Next?</h3>
+        <p>Understanding your needs for a ${title}, is the first step to delivering the perfect solution. By taking this short survey, you help us tailor our services specifically to your goals, ensuring that we provide exactly what you need—nothing more, nothing less. Whether you're starting fresh or refining an existing project, this guided journey will allow us to assess your requirements, recommend the best approach, and bring your vision to life efficiently. Take a moment to share your ideas with us, and let’s build something amazing together!</p>
+        <div class="modal-buttons">
+            <button class="quiz-button">Take the Survey</button>
+            <button class="exit-button" onclick="closeSecondPopup()">Exit</button>
+        </div>
+    `;
+
+    // Show the second modal
+    secondModal.style.display = "flex";
+}
+
+// Function to close second popup
+function closeSecondPopup() {
+    document.getElementById("second-popup-modal").style.display = "none";
+}
+
+
+
+// Close First Popup
+document.querySelector('.close-btn').addEventListener('click', function (event) {
+    event.stopPropagation();
+    document.getElementById("popup-modal").style.display = "none";
+});
+
+// Close Second Popup
+document.querySelector('.close-second-btn').addEventListener('click', function (event) {
+    event.stopPropagation();
+    document.getElementById("second-popup-modal").style.display = "none";
+});
+
+// Close Popups on Outside Click
+window.addEventListener('click', function (event) {
+    const modal = document.getElementById("popup-modal");
+    const secondModal = document.getElementById("second-popup-modal");
+    
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+    if (event.target === secondModal) {
+        secondModal.style.display = "none";
+    }
+});
+
+// Updated Data
+const data = {
+    "btn-website": {
+        title: "Get Your Website",
+        items: [
+            { 
+                icon: "📝", 
+                label: "Blog", 
+                description: "Share Your Thoughts, Build Your Audience.", 
+                fullDescription: "A blog website is a personal or professional platform where you can publish articles, share insights, and engage with readers. Whether you’re a journalist, hobbyist, or business expert, a well-designed blog allows you to establish credibility, monetize your content, and optimize for SEO to reach a wider audience."
+            },
+            { 
+                icon: "🛒", 
+                label: "E-commerce", 
+                description: "Sell products online with ease.", 
+                fullDescription: "An e-commerce website provides a digital storefront where customers can browse, select, and purchase products with secure payment options and a seamless checkout experience."
+            },
+
+            { 
+                icon: "🎨", 
+                label: "Portfolio", 
+                description: "Showcase your creative work.",
+                fullDescription: "A portfolio website is designed for creatives like photographers, designers, and artists to display their work visually and attract potential clients or employers."
+            },
+            { 
+                icon: "📰", 
+                label: "News", 
+                description: "Create a news & media website.",
+                fullDescription: "A news website delivers timely articles, updates, and multimedia content. It includes categories, real-time updates, and social media integrations."
+            },
+            { 
+                icon: "📚", 
+                label: "Education", 
+                description: "Online courses & learning.",
+                fullDescription: "An education website offers online courses, learning materials, and interactive lessons. It can include video lectures, quizzes, and progress tracking."
+            },
+            
+            { 
+                icon: "🏢", 
+                label: "Corporate", 
+                description: "Professional business website.",
+                fullDescription: "A corporate website represents your business, providing a professional online presence with company details, services, case studies, and contact forms. Designed for credibility and lead generation, it helps potential clients and investors connect with you effortlessly."
+            },
+            { 
+                icon: "🎭", 
+                label: "Entertainment", 
+                description: "Streaming & event website.",
+                fullDescription: "An entertainment website focuses on streaming media, event bookings, and interactive content for users interested in movies, music, and performances."
+            },
+            { 
+                icon: "🚀", 
+                label: "Startup", 
+                description: "Launch your startup’s presence.",
+                fullDescription: "A startup website introduces a new business venture, highlights its mission, and attracts investors or customers with a clear value proposition."
+            },
+            { 
+                icon: "🏥", 
+                label: "Healthcare", 
+                description: "Medical & health services.",
+                fullDescription: "A healthcare website connects patients with medical services, offering appointment bookings, telemedicine features, and health-related resources."
+            },
+            
+            { 
+              icon: "⚖️", 
+                label: "Legal", 
+        description: "Law firms & legal consultations.",
+        fullDescription: "A legal website serves law firms, attorneys, or legal consultants by offering client information, service listings, appointment scheduling, and legal resources to build trust and credibility."
+    },
+    { 
+icon: "🍽️", 
+        label: "Restaurant", 
+        description: "Menus, reservations, and orders.",
+        fullDescription: "A restaurant website showcases menus, allows customers to make reservations, place online orders, and discover promotions, enhancing the dining experience."
+    },
+    { 
+        icon: "🏡", 
+        label: "Real Estate", 
+        description: "Showcase properties & listings.",
+        fullDescription: "A real estate website helps agencies and agents list properties, provide virtual tours, and connect buyers with sellers through detailed property descriptions and contact options."
+    },
+    { 
+        icon: "💰", 
+        label: "Finance", 
+        description: "Financial services & resources.",
+        fullDescription: "A finance website offers investment insights, personal finance tools, banking services, or cryptocurrency platforms, ensuring secure transactions and up-to-date financial news."
+    },
+    { 
+        icon: "🎵", 
+        label: "Music", 
+        description: "Promote artists, albums, & events.",
+        fullDescription: "A music website is ideal for artists, bands, and labels to showcase music, sell merchandise, list tour dates, and engage with fans through multimedia content and streaming integration."
+    },
+    { 
+        icon: "❓", 
+        label: "No Match?", 
+        description: "Let us help you build something custom.",
+        fullDescription: "If none of the listed options match your needs, we can create a custom website tailored to your specific requirements. Whether it is a unique business model, a niche community platform, or an innovative web application, we can bring your vision to life with a personalized solution"
+    }
+
+        ]
+    },
+    "btn-app": {
+        title: "Build Your App",
+        items: [
+            { 
+                icon: "📱", 
+                label: "Mobile App", 
+                description: "iOS & Android applications.",
+                fullDescription: "A mobile app allows businesses or individuals to provide services, entertainment, or tools directly on smartphones, with features optimized for mobile users."
+            },
+            { 
+                icon: "🌐", 
+                label: "Web App", 
+                description: "Interactive web-based software.",
+                fullDescription: "A web app runs in a browser and provides software-like functionality, allowing users to perform tasks such as shopping, collaboration, and automation."
+            },
+            { 
+                icon: "🛍", 
+                label: "E-commerce App", 
+                description: "Sell products via apps.",
+                fullDescription: "An e-commerce app enables businesses to sell products or services directly through mobile devices, providing secure transactions and seamless shopping experiences."
+            },
+            { 
+                icon: "📅", 
+                label: "Booking App", 
+                description: "Reservations & scheduling.",
+                fullDescription: "A booking app allows users to schedule appointments, make reservations, and manage bookings for services like salons, doctors, or events."
+            },
+            { 
+                icon: "📲", 
+                label: "Social Media", 
+                description: "Networking & sharing.",
+                fullDescription: "A social media app enables users to connect, share content, and engage with others through posts, messaging, and interactive features."
+            },
+            { 
+                icon: "📑", 
+                label: "Business App", 
+                description: "For corporate use.",
+                fullDescription: "A business app helps organizations streamline operations, manage workflows, and facilitate communication between teams."
+            },
+            { 
+                icon: "💼", 
+                label: "Freelancer App", 
+                description: "Work & hire remotely.",
+                fullDescription: "A freelancer app connects independent workers with clients for projects, providing a marketplace for remote jobs and services."
+            },
+            { 
+                icon: "🚗", 
+                label: "Transport", 
+                description: "Taxi & delivery apps.",
+                fullDescription: "A transport app offers ride-hailing, delivery, or logistics services, allowing users to book rides or track shipments."
+            },
+            { 
+                icon: "📊", 
+                label: "Finance", 
+                description: "Banking & investing apps.",
+                fullDescription: "A finance app helps users manage their money, track expenses, invest, or access banking services securely."
+            },
+            
+    { 
+        icon: "🎮", 
+        label: "Game App", 
+        description: "Mobile & web games.",
+        fullDescription: "A game app provides users with interactive entertainment experiences, ranging from casual puzzle games to high-intensity multiplayer battles. Whether single-player or multiplayer, these apps incorporate immersive graphics, engaging storylines, and various in-game mechanics such as leaderboards, achievements, and monetization models like in-app purchases or ads. They can be developed for mobile devices, desktops, or web-based platforms."
+    },
+    { 
+        icon: "🎓", 
+        label: "Education App", 
+        description: "Learning & courses.",
+        fullDescription: "An education app provides a platform for learning, offering online courses, interactive lessons, quizzes, and study materials. It can cater to students, professionals, or hobbyists, covering subjects like academics, languages, coding, personal development, and more. Features can include live classes, AI-based tutoring, progress tracking, and certification upon course completion, making education accessible anytime, anywhere."
+    },
+    { 
+        icon: "⚕️", 
+        label: "Health & Fitness", 
+        description: "Wellness & medical apps.",
+        fullDescription: "A health & fitness app helps users maintain a healthy lifestyle by tracking workouts, nutrition, sleep patterns, and overall wellness. It may include features like guided exercise routines, meal planning, calorie counting, heart rate monitoring, and integration with wearable devices. Some apps also provide telemedicine services, allowing users to consult doctors, schedule appointments, and receive prescriptions remotely."
+    },
+    { 
+        icon: "🎭", 
+        label: "Entertainment App", 
+        description: "Streaming & media.",
+        fullDescription: "An entertainment app offers users access to various forms of digital content, including movies, TV shows, music, podcasts, and live streaming services. These apps may provide on-demand content, personalized recommendations, offline viewing, and interactive social features. Streaming platforms, video-sharing networks, and digital magazines fall into this category, catering to users who seek leisure and entertainment on their devices."
+    },
+    { 
+        icon: "🛠", 
+        label: "Utility App", 
+        description: "Tools & productivity.",
+        fullDescription: "A utility app serves as a practical tool to enhance productivity, efficiency, or convenience. These apps include features such as file management, VPN services, data storage, reminders, task managers, scanning tools, and other essential functionalities that help users complete everyday tasks with ease. They can be tailored for personal, business, or industrial use, depending on the target audience and required features."
+    }
+
+        ]
+    },
+    "btn-game": {
+        title: "Create Your Game",
+        items: [
+            { 
+                icon: "🎮", 
+                label: "Action", 
+                description: "High-energy combat & adventure.",
+                fullDescription: "Action games focus on fast-paced gameplay, requiring reflexes, combat skills, and immersive storylines to engage players in thrilling experiences."
+            },
+            { 
+                icon: "🧠", 
+                label: "Puzzle", 
+                description: "Challenge problem-solving skills.",
+                fullDescription: "Puzzle games engage players with logic-based challenges, spatial reasoning tasks, and creative problem-solving. Perfect for fans of brain teasers, escape rooms, and interactive riddles."
+            },
+            { 
+                icon: "⚽", 
+                label: "Sports", 
+                description: "Football, basketball, & more.",
+                fullDescription: "Sports games simulate real-world sports like football, basketball, and racing, allowing players to compete in tournaments and leagues."
+            },
+            { 
+                icon: "🚗", 
+                label: "Racing", 
+                description: "Speed & competition games.",
+                fullDescription: "Racing games feature competitive driving experiences with various vehicles, tracks, and challenges that test speed and skill."
+            },
+            { 
+                icon: "🗡", 
+                label: "RPG", 
+                description: "Role-playing & character growth.",
+                fullDescription: "RPGs allow players to take on character roles, level up skills, and experience immersive storytelling in vast, dynamic worlds."
+            },
+            { 
+                icon: "🌍", 
+                label: "Open World", 
+                description: "Free exploration adventure.",
+                fullDescription: "Open-world games provide vast environments where players can explore freely, engage in missions, and interact with dynamic NPCs."
+            },
+            { 
+                icon: "🤹", 
+                label: "Casual", 
+                description: "Simple, fun, and addictive.",
+                fullDescription: "Casual games are easy to play, often with simple mechanics and short sessions, making them perfect for all age groups."
+            },
+            { 
+                icon: "👾", 
+                label: "Arcade", 
+                description: "Classic fast-paced games.",
+                fullDescription: "Arcade games focus on quick reflexes and action-packed gameplay, often inspired by classic gaming experiences."
+            },
+            
+{ 
+    icon: "🏗", 
+    label: "Simulation", 
+    description: "Real-world activities & systems.",
+    fullDescription: "Simulation games mimic real-life experiences like city-building, farming, and piloting, providing in-depth and realistic gameplay."
+},
+{ 
+    icon: "🕵️", 
+    label: "Mystery", 
+    description: "Investigate, solve cases, & uncover secrets.",
+    fullDescription: "Mystery games challenge players with detective work, crime-solving, and immersive storytelling to uncover hidden truths."
+},
+{ 
+    icon: "🎭", 
+    label: "Interactive Story", 
+    description: "Choose your own adventure.",
+    fullDescription: "Interactive story games offer deep narrative experiences where player choices impact the story’s direction and outcome."
+},
+{ 
+    icon: "💡", 
+    label: "Educational", 
+    description: "Learn through interactive play.",
+    fullDescription: "Educational games blend fun and learning, covering subjects like math, history, and language in engaging ways."
+},
+            { 
+                icon: "💰", 
+                label: "Strategy", 
+                description: "Build, plan, and dominate.",
+                fullDescription: "Strategy games challenge players to think ahead, manage resources, and make tactical decisions to achieve victory."
+            }
+        ]
+    },
+
+    "btn-hosting": {
+        title: "Hosting & Domain",
+        items: [
+            { 
+                icon: "🌍", 
+                label: "Domain Registration", 
+                description: "Get your custom domain.", 
+                fullDescription: "Secure a unique domain name for your website to establish a strong online identity. Choose from popular extensions like .com, .net, and .org." 
+            },
+            { 
+                icon: "💾", 
+                label: "Shared Hosting", 
+                description: "Budget-friendly hosting.", 
+                fullDescription: "Affordable hosting for small websites and blogs. Resources are shared among multiple users, making it a cost-effective choice for startups and individuals." 
+            },
+            { 
+                icon: "🚀", 
+                label: "VPS Hosting", 
+                description: "High-performance servers.", 
+                fullDescription: "A Virtual Private Server (VPS) offers dedicated resources and enhanced performance, making it ideal for growing businesses that need more control." 
+            },
+            { 
+                icon: "🔒", 
+                label: "SSL Certificates", 
+                description: "Secure your website.", 
+                fullDescription: "An SSL certificate encrypts data between users and your website, enhancing security and trust while boosting search engine rankings." 
+            },
+            { 
+                icon: "📦", 
+                label: "Cloud Hosting", 
+                description: "Scalable cloud solutions.", 
+                fullDescription: "Cloud hosting offers flexible resources that scale with your needs, providing high availability and reliability for demanding applications." 
+            },
+            { 
+                icon: "🛡", 
+                label: "Dedicated Server", 
+                description: "Exclusive server resources.", 
+                fullDescription: "A dedicated server provides full control and resources for high-traffic websites, ensuring maximum speed, security, and performance." 
+            },
+            { 
+                icon: "💡", 
+                label: "Managed Hosting", 
+                description: "Let experts handle it.", 
+                fullDescription: "Fully managed hosting where technical aspects like updates, security, and maintenance are handled for you, allowing you to focus on your business." 
+            },
+            { 
+                icon: "📈", 
+                label: "SEO Tools", 
+                description: "Boost site rankings.", 
+                fullDescription: "Optimize your website for search engines with tools that improve visibility, keyword analysis, and content performance tracking." 
+            },
+            { 
+                icon: "📧", 
+                label: "Business Emails", 
+                description: "Professional email setup.", 
+                fullDescription: "Get a custom email address (e.g., yourname@yourbusiness.com) to enhance professionalism and build trust with clients." 
+            }
+        ]
+    },
+    "btn-patents": {
+        title: "Patents & Services",
+        items: [
+            { 
+                icon: "📜", 
+                label: "Patent Filing", 
+                description: "Protect your invention.", 
+                fullDescription: "File a patent to secure exclusive rights to your invention, preventing others from making, using, or selling it without permission." 
+            },
+            { 
+                icon: "🏛", 
+                label: "Trademark", 
+                description: "Secure your brand identity.", 
+                fullDescription: "Register a trademark to protect your business name, logo, or slogan from being used by competitors, ensuring brand recognition." 
+            },
+            { 
+                icon: "📄", 
+                label: "Copyright", 
+                description: "Protect creative work.", 
+                fullDescription: "Copyright protection ensures that your original works, such as books, music, and software, cannot be copied or distributed without consent." 
+            },
+            { 
+                icon: "⚖", 
+                label: "Legal Consulting", 
+                description: "Get expert guidance.", 
+                fullDescription: "Receive legal advice from professionals on business regulations, contracts, intellectual property, and compliance matters." 
+            },
+            { 
+                icon: "📑", 
+                label: "Business Registration", 
+                description: "Register your company.", 
+                fullDescription: "Formally establish your business as an LLC, corporation, or sole proprietorship to operate legally and access financial benefits." 
+            },
+            { 
+                icon: "📝", 
+                label: "Contracts & Agreements", 
+                description: "Legal document drafting.", 
+                fullDescription: "Get professionally drafted contracts and agreements, ensuring legal protection in business transactions and partnerships." 
+            },
+            { 
+                icon: "🚀", 
+                label: "Startup Consulting", 
+                description: "Launch your business right.", 
+                fullDescription: "Expert guidance on business models, funding strategies, and growth plans to help startups establish a solid foundation." 
+            },
+            { 
+                icon: "💰", 
+                label: "Funding & Grants", 
+                description: "Find financial support.", 
+                fullDescription: "Access funding opportunities, grants, and investment options to fuel business growth and expansion." 
+            },
+            { 
+                icon: "📈", 
+                label: "Investment Guidance", 
+                description: "Smart financial planning.", 
+                fullDescription: "Strategic advice on investment opportunities, risk assessment, and financial planning for business sustainability." 
+            }
+        ]
+        
+    }
+};
+
+
+
+        function previewFile() {
+            const fileInput = document.getElementById("fileInput");
+            const filePreview = document.getElementById("filePreview");
+            if (fileInput.files.length > 0) {
+                filePreview.innerText = "Selected: " + fileInput.files[0].name;
+            } else {
+                filePreview.innerText = "No file selected.";
+            }
+        }
+       const countryCodes = [
+    { name: "United States", code: "+1" },
+    { name: "United Kingdom", code: "+44" },
+    { name: "Canada", code: "+1" },
+    { name: "India", code: "+91" },
+    { name: "Australia", code: "+61" },
+    { name: "Germany", code: "+49" },
+    { name: "France", code: "+33" },
+    { name: "Nigeria", code: "+234" },
+    { name: "South Africa", code: "+27" },
+    { name: "Kenya", code: "+254" }
+]; 
+        const quizData = {
+
+    "Blog": [
+        { question: "What is the main purpose of your blog?", type: "text" },
+        { question: "Do you need SEO optimization?", type: "choice", options: ["Yes", "No"] },
+        { question: "Would you like a comment section?", type: "choice", options: ["Yes", "No"] },
+        { question: "What kind of topics will you cover?", type: "text" },
+        { question: "Do you want social media integration?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need email subscription features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+       { question: "What will your website name be?", type: "text" }, 
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+ { question: "Enter your phone number", type: "phone" }
+    ],
+
+
+    "E-commerce": [
+        { question: "What type of products will you sell?", type: "text" },
+        { question: "Do you need payment integration?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need inventory management?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will you require discount coupons?", type: "choice", options: ["Yes", "No"] },
+        { question: "How many products will you start with?", type: "text" },
+        { question: "Do you need customer reviews?", type: "choice", options: ["Yes", "No"] },
+                { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Portfolio": [
+        { question: "What type of work will you showcase?", type: "text" },
+        { question: "Do you need a contact form?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need image galleries?", type: "choice", options: ["Yes", "No"] },
+        { question: "Would you like a testimonial section?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need downloadable content (e.g., resume)?", type: "choice", options: ["Yes", "No"] },
+        { question: "Would you like an about me section?", type: "choice", options: ["Yes", "No"] },
+                { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    
+    "News": [
+    { "question": "What type of news will your website cover?", "type": "text" },
+    { "question": "Do you need real-time updates?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a comment section for articles?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need social media integration?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a newsletter feature?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you want a paywall for premium content?", "type": "choice", "options": ["Yes", "No"] },
+            { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+"Education": [
+    { "question": "What type of courses or learning materials will you offer?", "type": "text" },
+    { "question": "Do you need video course support?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you require user registration for students?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need interactive quizzes and assignments?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you provide certification upon completion?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need integration with payment systems for paid courses?", "type": "choice", "options": ["Yes", "No"] },
+            { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+"Corporate": [
+    { "question": "What is your company's main industry?", "type": "text" },
+    { "question": "Do you need a team members page?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you require a contact form for inquiries?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you showcase company news and updates?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need an investor relations section?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like integration with LinkedIn or other professional networks?", "type": "choice", "options": ["Yes", "No"] },
+            { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+"Entertainment": [
+    { "question": "What type of entertainment content will you provide?", "type": "text" },
+    { "question": "Do you need live streaming capabilities?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you include event ticket bookings?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you want user-generated content (e.g., fan submissions)?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you require a subscription model for exclusive content?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need social media sharing and engagement tools?", "type": "choice", "options": ["Yes", "No"] },
+            { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+"Startup": [
+    { "question": "What is your startup's main focus?", "type": "text" },
+    { "question": "Do you need a section for investors and funding opportunities?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a blog for startup updates?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you require user registration or sign-ups?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need a job board for hiring?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like integration with analytics tools for tracking growth?", "type": "choice", "options": ["Yes", "No"] },
+            { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+"Healthcare": [
+    { "question": "What type of healthcare services do you offer?", "type": "text" },
+    { "question": "Do you need online appointment booking?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you provide telemedicine or virtual consultations?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you require patient portals for medical records?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you offer a blog with health tips and articles?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need an emergency contact or live chat support?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+"Legal": [
+    { "question": "What type of legal services do you offer?", "type": "text" },
+    { "question": "Do you need an appointment booking system?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you provide legal resources or articles?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need a client portal for case updates?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a consultation request form?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need a secure document upload feature?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Restaurant": [
+    { "question": "Do you need an online menu display?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you offer online reservations?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you want online ordering for delivery or pickup?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a section for customer reviews?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need social media integration for promotions?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you feature a blog for recipes or food stories?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Real Estate": [
+    { "question": "Are you listing residential, commercial, or both types of properties?", "type": "text" },
+    { "question": "Do you need virtual property tours?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will visitors be able to filter properties by price, location, and size?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need a mortgage calculator?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Should agents have profiles with contact details?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will there be an option for visitors to save favorite properties?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Finance": [
+    { "question": "What type of financial services do you offer?", "type": "text" },
+    { "question": "Do you need a loan or investment calculator?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you provide market updates and financial news?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you require a client dashboard for transactions?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like to integrate a chatbot for financial advice?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need secure login and user authentication?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Music": [
+    { "question": "Are you an artist, band, or music label?", "type": "text" },
+    { "question": "Do you need a music streaming feature?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will you sell merchandise on your site?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need an event or tour calendar?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like fan interaction features like a blog or forum?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you want social media integration for music promotion?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"No Match?": [
+    { "question": "What kind of website are you looking for?", "type": "text" },
+    { "question": "What key features would you like to include?", "type": "text" },
+    { "question": "Do you need e-commerce functionality?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a membership or login system?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Are there any existing websites that inspire your vision?", "type": "text" },
+    { "question": "Do you have a deadline for launching your website?", "type": "text" },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the website is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+    "Mobile App": [
+        { question: "What is the main purpose of your mobile app?", type: "text" },
+        { question: "Do you need the app for iOS, Android, or both?", type: "choice", options: ["iOS", "Android", "Both"] },
+        { question: "Will the app require user authentication (login/signup)?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need push notification support?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will your app need in-app purchases or subscriptions?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need offline functionality?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the App is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Web App": [
+        { question: "What is the primary function of your web app?", type: "text" },
+        { question: "Will the app require user accounts?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need real-time updates or live features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will the app integrate with third-party services?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need a payment gateway for transactions?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need admin panel access for management?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+
+    "Action": [
+        { question: "What kind of action elements do you want?", type: "text" },
+        { question: "Should combat be realistic or stylized?", type: "choice", options: ["Realistic", "Stylized"] },
+        { question: "Would you like boss fights?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should the game be open-world or level-based?", type: "choice", options: ["Open-world", "Level-based"] },
+        { question: "What kind of weapons or abilities should be included?", type: "text" },
+        { question: "Should the game include parkour or movement-based mechanics?", type: "choice", options: ["Yes", "No"] },
+        { question: "What is the primary setting of the game?", type: "text" },
+        { question: "Do you want a co-op mode?", type: "choice", options: ["Yes", "No"] }
+    ],
+    "Simulation": [
+        { question: "What type of simulation are you interested in?", type: "text" },
+        { question: "Should the game focus on realism or casual fun?", type: "choice", options: ["Realism", "Casual"] },
+        { question: "Will the game require economy or resource management?", type: "choice", options: ["Yes", "No"] },
+        { question: "Would you like a sandbox mode?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should players be able to modify or customize environments?", type: "choice", options: ["Yes", "No"] },
+        { question: "What level of AI interaction do you expect?", type: "choice", options: ["Basic", "Advanced"] },
+        { question: "Do you need multiplayer features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Would you like career progression in the game?", type: "choice", options: ["Yes", "No"] }
+    ],
+    "Mystery": [
+        { question: "Should the game involve crime-solving or supernatural themes?", type: "choice", options: ["Crime-solving", "Supernatural"] },
+        { question: "Will the game be first-person or third-person?", type: "choice", options: ["First-person", "Third-person"] },
+        { question: "Do you want hidden object mechanics?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should the story have multiple endings?", type: "choice", options: ["Yes", "No"] },
+        { question: "What kind of puzzles should be included?", type: "text" },
+        { question: "Would you like voice acting for characters?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should players have a journal or inventory system?", type: "choice", options: ["Yes", "No"] },
+        { question: "What tone should the game have?", type: "choice", options: ["Dark & Gritty", "Light & Fun", "Suspenseful"] }
+    ],
+    "Interactive Story": [
+        { question: "What type of story should the game focus on?", type: "text" },
+        { question: "Do you want choices to impact the ending?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should there be romance elements?", type: "choice", options: ["Yes", "No"] },
+        { question: "How many playable characters should there be?", type: "text" },
+        { question: "What perspective should the game be in?", type: "choice", options: ["First-person", "Third-person"] },
+        { question: "Do you want fully voiced dialogues?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should the game include quick-time events?", type: "choice", options: ["Yes", "No"] },
+        { question: "What emotions should the game evoke?", type: "text" }
+    ],
+    "Educational": [
+        { question: "What subject should the game focus on?", type: "text" },
+        { question: "What age group is the game meant for?", type: "text" },
+        { question: "Should the game be quiz-based or interactive?", type: "choice", options: ["Quiz", "Interactive"] },
+        { question: "Would you like a progress tracking system?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should the game include multiplayer learning?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will the game have animated explanations?", type: "choice", options: ["Yes", "No"] },
+        { question: "Should the game be voice-assisted?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need integration with an LMS (Learning Management System)?", type: "choice", options: ["Yes", "No"] }
+    ],
+    
+    "E-commerce App": [
+        { question: "What type of products will you sell?", type: "text" },
+        { question: "Do you need multiple payment gateway options?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will you support multiple sellers (marketplace model)?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need product review & rating features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will you require customer support chat integration?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need inventory management features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Booking App": [
+        { question: "What type of bookings will your app handle?", type: "text" },
+        { question: "Do you need a calendar scheduling system?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will customers receive booking confirmations via email/SMS?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you require integration with third-party booking systems?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will customers need to make payments during booking?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need automated reminders for bookings?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Social Media": [
+        { question: "What is the main goal of your social media platform?", type: "text" },
+        { question: "Do you need user profile customization features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will users be able to upload images/videos?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need a messaging/chat feature?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will your platform have groups or communities?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need live-streaming capabilities?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Business App": [
+        { question: "What business processes will your app manage?", type: "text" },
+        { question: "Will the app have role-based access control?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need data analytics and reporting features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will the app integrate with external business tools?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you require document management features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need cloud storage integration?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Freelancer App": [
+        { question: "What services will freelancers offer on your platform?", type: "text" },
+        { question: "Will users need a bidding or proposal system?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need a built-in payment system?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will freelancers be able to showcase portfolios?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you require a review and rating system?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will clients and freelancers have messaging features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Transport": [
+        { question: "What type of transport services will your app offer?", type: "text" },
+        { question: "Do you need real-time vehicle tracking?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will users need fare estimation before booking?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need driver and rider profiles?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will you support multiple payment methods?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need ride history and trip management features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Finance": [
+        { question: "What financial services will your app provide?", type: "text" },
+        { question: "Will users need personal budgeting tools?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need investment tracking features?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will your app integrate with banks and financial institutions?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you need AI-based financial recommendations?", type: "choice", options: ["Yes", "No"] },
+        { question: "Will your app require biometric authentication?", type: "choice", options: ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+    ],
+    
+   "Game App": [
+    { "question": "What type of game are you developing?", "type": "text" },
+    { "question": "Will it be single-player, multiplayer, or both?", "type": "choice", "options": ["Single-player", "Multiplayer", "Both"] },
+    { "question": "Which platform will the game be available on?", "type": "choice", "options": ["Mobile", "PC", "Web", "Console", "Multiple"] },
+    { "question": "Do you need in-game monetization (e.g., ads, in-app purchases)?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will the game require leaderboards, achievements, or social features?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need AI or NPC behavior integration?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Education App": [
+    { "question": "What type of learning content will the app provide?", "type": "text" },
+    { "question": "Will it include video courses, quizzes, or interactive lessons?", "type": "choice", "options": ["Video Courses", "Quizzes", "Interactive Lessons", "All"] },
+    { "question": "Do you need live classes or virtual classrooms?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will users receive certifications upon completion?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need AI-based tutoring or automated assessments?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Should the app support multiple languages?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Health & Fitness": [
+    { "question": "What aspect of health and fitness will the app focus on?", "type": "text" },
+    { "question": "Will it include workout tracking, meal planning, or both?", "type": "choice", "options": ["Workout Tracking", "Meal Planning", "Both"] },
+    { "question": "Do you need integration with wearable devices (e.g., smartwatches)?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Should users be able to book medical consultations?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will the app provide AI-generated health recommendations?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need a subscription-based model for premium content?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+],
+
+"Entertainment App": [
+    { "question": "What type of entertainment content will the app provide?", "type": "text" },
+    { "question": "Will it support video, audio, or both?", "type": "choice", "options": ["Video", "Audio", "Both"] },
+    { "question": "Do you need live streaming capabilities?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Should the app include user-generated content (e.g., uploads, comments)?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will the app require personalized recommendations for users?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need a subscription or ad-supported revenue model?", "type": "choice", "options": ["Subscription", "Ads", "Both"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+],
+
+"Utility App": [
+    { "question": "What problem does your utility app solve?", "type": "text" },
+    { "question": "Which core feature is most important (e.g., file management, VPN, reminders)?", "type": "text" },
+    { "question": "Will it require cloud storage or data synchronization?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need multi-device support (e.g., phone, tablet, desktop)?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Should the app have offline functionality?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Will the app require user accounts and authentication?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+],
+
+"Nomatch?": [
+    { "question": "What kind of app are you looking for?", "type": "text" },
+    { "question": "What are the core features you want in the app?", "type": "text" },
+    { "question": "Will it require user accounts and authentication?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Do you need integration with third-party APIs?", "type": "choice", "options": ["Yes", "No"] },
+    { "question": "Would you like a subscription-based model or one-time payment?", "type": "choice", "options": ["Subscription", "One-time Payment"] },
+    { "question": "Are there any existing apps that inspire your idea?", "type": "text" },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the app is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+],
+ 
+    
+    "Action": [
+        { "question": "What kind of action gameplay are you aiming for?", "type": "text" },
+        { "question": "Do you want single-player, multiplayer, or both?", "type": "choice", "options": ["Single-player", "Multiplayer", "Both"] },
+        { "question": "Will your game feature combat mechanics?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need a storyline or will it be level-based?", "type": "choice", "options": ["Story-driven", "Level-based", "Both"] },
+        { "question": "What camera perspective will your game use?", "type": "choice", "options": ["First-person", "Third-person", "Top-down", "Side-scrolling"] },
+        { "question": "Will there be character customization?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Puzzle": [
+        { "question": "What type of puzzles will be in your game?", "type": "text" },
+        { "question": "Do you need a hint system for players?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will puzzles be time-based or relaxed?", "type": "choice", "options": ["Time-based", "Relaxed", "Both"] },
+        { "question": "Do you want a story-driven puzzle game?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will the puzzles be single-player, multiplayer, or both?", "type": "choice", "options": ["Single-player", "Multiplayer", "Both"] },
+        { "question": "Do you need procedurally generated puzzles?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    
+    "Open World": [
+        { "question": "Do you prefer a structured storyline or full freedom to explore?", "type": "choice", "options": ["Structured Storyline", "Full Freedom", "Both"] },
+        { "question": "Should the game have realistic physics and survival elements?", "type": "choice", "options": ["Yes", "No", "Some Elements"] },
+        { "question": "How important is character customization to you?", "type": "choice", "options": ["Very Important", "Somewhat Important", "Not Important"] },
+        { "question": "Would you like multiplayer or co-op features?", "type": "choice", "options": ["Multiplayer", "Co-op", "Single-player Only"] },
+        { "question": "Should there be a mix of combat, puzzles, and exploration?", "type": "choice", "options": ["Yes", "No", "Only One Focus"] },
+        { "question": "What type of world setting interests you the most?", "type": "choice", "options": ["Fantasy", "Sci-Fi", "Historical", "Modern", "Post-Apocalyptic"] },
+        { "question": "Do you want a dynamic weather system and day/night cycles?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Casual": [
+        { "question": "Should the game be designed for quick play sessions or longer engagement?", "type": "choice", "options": ["Quick Play", "Long Sessions", "Both"] },
+        { "question": "Do you prefer tap-and-play mechanics or more interactive controls?", "type": "choice", "options": ["Tap-and-Play", "Interactive Controls", "Both"] },
+        { "question": "Should there be competitive leaderboards or just relaxed gameplay?", "type": "choice", "options": ["Leaderboards", "Relaxed", "Both"] },
+        { "question": "Would you like daily challenges and rewards?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Should the game feature simple graphics or high-quality visuals?", "type": "choice", "options": ["Simple Graphics", "High-Quality Visuals"] },
+        { "question": "Would you enjoy social features like sharing scores or inviting friends?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Should the difficulty gradually increase or stay easy throughout?", "type": "choice", "options": ["Gradually Increase", "Stay Easy"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Arcade": [
+        { "question": "Do you prefer endless gameplay or level-based progression?", "type": "choice", "options": ["Endless", "Level-Based", "Both"] },
+        { "question": "Should the game have power-ups and upgrades?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you want a high-score leaderboard for competition?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Should the game include retro-style pixel art or modern visuals?", "type": "choice", "options": ["Retro Pixel Art", "Modern Visuals", "Both"] },
+        { "question": "Would you like a fast-paced soundtrack to match the gameplay?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Should the controls be simple (one-tap) or require skill-based inputs?", "type": "choice", "options": ["Simple (One-Tap)", "Skill-Based"] },
+        { "question": "Would you enjoy randomized challenges to keep things unpredictable?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+
+    "RPG": [
+        { "question": "What setting will your RPG take place in?", "type": "text" },
+        { "question": "Will your game be open-world or linear?", "type": "choice", "options": ["Open-world", "Linear", "Hybrid"] },
+        { "question": "Do you need a character progression system?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will your game have turn-based or real-time combat?", "type": "choice", "options": ["Turn-based", "Real-time", "Both"] },
+        { "question": "Do you need voice acting for dialogues?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will you have multiple playable characters?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Strategy": [
+        { "question": "What kind of strategy game are you developing?", "type": "text" },
+        { "question": "Will your game be turn-based or real-time?", "type": "choice", "options": ["Turn-based", "Real-time"] },
+        { "question": "Do you need AI-driven opponents?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will there be resource management?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you want a single-player campaign?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will multiplayer be a key feature?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+    ],
+    "Simulation": [
+        { "question": "What type of simulation game are you creating?", "type": "text" },
+        { "question": "Will your game focus on realism or fun mechanics?", "type": "choice", "options": ["Realism", "Fun", "Both"] },
+        { "question": "Do you need detailed physics simulation?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will your game have sandbox elements?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require AI-driven NPC interactions?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will your game have an economy system?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Horror": [
+        { "question": "What type of horror experience are you aiming for?", "type": "text" },
+        { "question": "Do you need first-person or third-person perspective?", "type": "choice", "options": ["First-person", "Third-person"] },
+        { "question": "Will your game rely on psychological horror or jump scares?", "type": "choice", "options": ["Psychological", "Jump scares", "Both"] },
+        { "question": "Do you need survival mechanics (e.g., limited resources)?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will there be a stealth mechanic?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require multiplayer features?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+    ],
+    "Adventure": [
+        { "question": "What kind of adventure story will your game tell?", "type": "text" },
+        { "question": "Will your game have an open-world or linear story?", "type": "choice", "options": ["Open-world", "Linear"] },
+        { "question": "Do you need voice acting for characters?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will there be puzzle-solving mechanics?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you want combat or purely exploration?", "type": "choice", "options": ["Combat", "Exploration", "Both"] },
+        { "question": "Will your game feature dialogue choices?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+    ],
+    "Sports": [
+        { "question": "What type of sport will your game be based on?", "type": "text" },
+        { "question": "Will the game focus on realism or arcade-style gameplay?", "type": "choice", "options": ["Realism", "Arcade"] },
+        { "question": "Do you need online multiplayer?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will there be team management mechanics?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need licensing for real teams/players?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will you include a career mode?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" } ,
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Racing": [
+        { "question": "What type of racing game are you creating?", "type": "text" },
+        { "question": "Will your game feature real-world cars or fictional vehicles?", "type": "choice", "options": ["Real-world", "Fictional"] },
+        { "question": "Do you need a single-player campaign?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will your game support multiplayer racing?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you want customization for racers?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will there be off-road or street racing?", "type": "choice", "options": ["Off-road", "Street", "Both"] },
+        { question: "Do you have a logo?", type: "choice", options: ["Yes", "No"] },
+        { question: "Upload your logo", type: "file", condition: (answers) => answers[6] === "Yes" },
+        { question: "What is your color theme?", type: "color" },
+        { question: "Please write down what your vision of the game is.", type: "textarea" },
+        { question: "What is your preferred starting date?", type: "date" },
+        { question: "What is your project deadline?", type: "date" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" } 
+    ],
+    
+    "Domain Registration": [
+        { "question": "Do you already have a domain name?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "What domain extension do you prefer? (.com, .net, .org, etc.)", "type": "text" },
+        { "question": "Would you like WHOIS privacy protection?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need email hosting with your domain?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like domain auto-renewal to prevent expiration?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Shared Hosting": [
+        { "question": "What type of website will you host?", "type": "text" },
+        { "question": "How much traffic do you expect per month?", "type": "text" },
+        { "question": "Do you need email hosting included?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like automated backups?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require one-click installation for CMS platforms (e.g., WordPress)?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "VPS Hosting": [
+        { "question": "What operating system do you prefer? (Linux, Windows, etc.)", "type": "text" },
+        { "question": "How much RAM and storage do you need?", "type": "text" },
+        { "question": "Do you need root access to the server?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like a managed or unmanaged VPS?", "type": "choice", "options": ["Managed", "Unmanaged"] },
+        { "question": "Do you need automatic scaling based on traffic?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "SSL Certificates": [
+        { "question": "Do you need a standard SSL or wildcard SSL (for subdomains)?", "type": "choice", "options": ["Standard", "Wildcard"] },
+        { "question": "Is your website handling sensitive data (e.g., payments, personal info)?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like your SSL certificate to be auto-renewed?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need an Extended Validation (EV) SSL for higher security?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like assistance in installing and configuring the SSL certificate?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Cloud Hosting": [
+        { "question": "Do you need auto-scaling for traffic spikes?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Which cloud provider do you prefer? (AWS, Google Cloud, etc.)", "type": "text" },
+        { "question": "Do you need managed cloud hosting?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like built-in CDN (Content Delivery Network) for faster performance?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require real-time monitoring and alerts for uptime?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Dedicated Server": [
+        { "question": "What are your server specifications (CPU, RAM, Storage)?", "type": "text" },
+        { "question": "Do you need full server management?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will you need backup and disaster recovery?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require a custom firewall setup for security?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like DDoS protection for your server?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Managed Hosting": [
+        { "question": "What type of website or application are you hosting?", "type": "text" },
+        { "question": "Do you need automatic software updates and security management?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Will you require 24/7 support?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need database optimization and management?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like advanced caching for faster site performance?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "SEO Tools": [
+        { "question": "Do you need keyword research and tracking?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like automatic SEO audits and reports?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you want competitor analysis tools?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need backlink tracking and suggestions?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like AI-generated content suggestions for SEO?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Business Emails": [
+        { "question": "How many business email accounts do you need?", "type": "text" },
+        { "question": "Do you need integration with Gmail or Outlook?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require advanced spam filtering and security?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like unlimited email storage?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need email migration from an existing provider?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    
+    
+    "Patent Filing": [
+        { "question": "Have you conducted a patent search to check for existing patents?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "What type of invention are you patenting? (e.g., product, process, design)", "type": "text" },
+        { "question": "Do you need help drafting a patent application?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like assistance in filing internationally?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you want legal representation for patent disputes?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "What is your preferred patent type? (Utility, Design, or Provisional)", "type": "text" },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Trademark": [
+        { "question": "Are you applying for a brand name, logo, or both?", "type": "text" },
+        { "question": "Do you need a trademark for a specific country or globally?", "type": "choice", "options": ["Specific Country", "Global"] },
+        { "question": "Have you conducted a trademark availability search?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need help with trademark classification?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like trademark monitoring services to prevent infringement?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require legal representation for trademark disputes?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Copyright": [
+        { "question": "What type of work are you copyrighting? (e.g., book, music, software, artwork)", "type": "text" },
+        { "question": "Do you need a copyright for an individual or a business?", "type": "choice", "options": ["Individual", "Business"] },
+        { "question": "Have you previously published the work?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need assistance with licensing your copyrighted work?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like copyright enforcement services?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need to register copyright in multiple countries?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Legal Consulting": [
+        { "question": "What type of legal assistance do you need? (e.g., business, intellectual property, contracts)", "type": "text" },
+        { "question": "Do you need ongoing legal support or a one-time consultation?", "type": "choice", "options": ["Ongoing", "One-Time"] },
+        { "question": "Would you like assistance in drafting or reviewing legal documents?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require legal representation in disputes?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need guidance on regulatory compliance?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like a legal risk assessment for your business?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Business Registration": [
+        { "question": "What type of business entity are you registering? (e.g., LLC, Corporation, Sole Proprietorship)", "type": "text" },
+        { "question": "Do you need help choosing the right business structure?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require a registered business address?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like assistance with tax registrations (e.g., EIN, VAT, GST)?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need business licenses or permits?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like ongoing compliance support for your business?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Contracts & Agreements": [
+        { "question": "What type of contract do you need? (e.g., employment, partnership, NDA, lease)", "type": "text" },
+        { "question": "Do you need a contract drafted, reviewed, or both?", "type": "choice", "options": ["Drafted", "Reviewed", "Both"] },
+        { "question": "Would you like contract negotiation assistance?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need legally binding electronic signatures?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like contract dispute resolution support?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require a contract tailored for international business?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Startup Consulting": [
+        { "question": "What stage is your startup currently in? (e.g., idea, early-stage, scaling)", "type": "text" },
+        { "question": "Do you need help with business planning and strategy?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like market research and competitive analysis?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you need assistance with legal and regulatory compliance?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Are you looking for mentorship or coaching?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like help with branding and marketing strategies?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Funding & Grants": [
+        { "question": "Are you looking for government grants or private funding?", "type": "choice", "options": ["Government", "Private", "Both"] },
+        { "question": "What is the purpose of the funding? (e.g., R&D, expansion, product development)", "type": "text" },
+        { "question": "Do you need help preparing funding proposals or applications?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like assistance in identifying potential investors or grant opportunities?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Do you require financial projections and business valuation support?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Are you interested in equity-based or debt-based funding?", "type": "choice", "options": ["Equity", "Debt"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ],
+    "Investment Guidance": [
+        { "question": "Are you looking for short-term or long-term investments?", "type": "choice", "options": ["Short-Term", "Long-Term"] },
+        { "question": "What industries or sectors are you interested in investing in?", "type": "text" },
+        { "question": "Do you need risk assessment and portfolio diversification advice?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Would you like tax-efficient investment strategies?", "type": "choice", "options": ["Yes", "No"] },
+        { "question": "Are you interested in startup investments or established businesses?", "type": "choice", "options": ["Startups", "Established Businesses"] },
+        { "question": "Do you need ongoing investment monitoring and reporting?", "type": "choice", "options": ["Yes", "No"] },
+        { question: "Enter your email", type: "email" },
+        { question: "Enter your phone number", type: "phone" }
+    ]
+
+
+
+};
+
+let currentQuestionIndex = 0;
+let selectedCategory = "";
+let userAnswers = [];
+
+// Open Quiz Modal
+function openQuizModal(category) {
+    selectedCategory = category;
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    updateQuestion();
+
+    document.getElementById("quiz-title").textContent = `Survey for ${category}`;
+    document.getElementById("quiz-modal").style.display = "flex";
+}
+
+function updateQuestion() {
+    const questionContainer = document.getElementById("quiz-question-container");
+    const backButton = document.getElementById("back-quiz");
+    const nextButton = document.getElementById("next-quiz");
+    const progressBar = document.getElementById("quiz-progress");
+
+    const questionData = quizData[selectedCategory][currentQuestionIndex];
+    if (!questionData) return;
+
+    if (questionData.condition && !questionData.condition(userAnswers)) {
+        currentQuestionIndex++;
+        updateQuestion();
+        return;
+    }
+
+    let questionHTML = `<div class="quiz-question">${questionData.question}</div>`;
+
+    switch (questionData.type) {
+        case "text":
+        case "email":
+        case "date":
+            questionHTML += `<input type="${questionData.type}" id="quiz-answer" value="${userAnswers[currentQuestionIndex] || ''}" />`;
+            break;
+        case "phone":
+            const savedData = userAnswers[currentQuestionIndex] || {};
+            questionHTML += `
+                <div class="phone-input">
+                    <select id="country-code">
+                        ${countryCodes.map(country => 
+                            `<option value="${country.code}" ${savedData.countryCode === country.code ? "selected" : ""}>${country.name} (${country.code})</option>`
+                        ).join("")}
+                    </select>
+                    <input type="tel" id="quiz-answer" placeholder="Enter phone number" value="${savedData.phoneNumber || ''}" />
+                </div>
+            `;
+            break;
+        case "choice":
+            questionHTML += `<div class="choice-container">`;
+            questionHTML += questionData.options.map(option => `
+                <label><input type="radio" name="quiz-answer" value="${option}" ${userAnswers[currentQuestionIndex] === option ? 'checked' : ''} /> ${option}</label>
+            `).join("");
+            questionHTML += `</div>`;
+            break;
+        case "file":
+            questionHTML += `<input type="file" id="quiz-answer" />`;
+            break;
+        case "color":
+            questionHTML += `<input type="color" id="quiz-answer" value="${userAnswers[currentQuestionIndex] || '#000000'}" />
+                             <label><input type="checkbox" id="stick-to-logo" /> Stick to logo color</label>`;
+            break;
+        case "textarea":
+            questionHTML += `<textarea id="quiz-answer">${userAnswers[currentQuestionIndex] || ''}</textarea>`;
+            break;
+    }
+
+    questionContainer.innerHTML = questionHTML;
+    backButton.style.display = currentQuestionIndex > 0 ? "inline-block" : "none";
+    nextButton.textContent = currentQuestionIndex === quizData[selectedCategory].length - 1 ? "Finish" : "Next";
+
+    // **Update Progress Bar**
+    const totalQuestions = quizData[selectedCategory].length;
+    const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+    progressBar.style.width = progress + "%";
+    progressBar.textContent = Math.round(progress) + "%";
+}
+
+// **Save selected country code and phone number correctly**
+function saveAnswer() {
+    const questionData = quizData[selectedCategory][currentQuestionIndex];
+    if (!questionData) return;
+
+    const answerInput = document.getElementById("quiz-answer");
+
+    if (questionData.type === "phone") {
+        const countryCodeInput = document.getElementById("country-code");
+        userAnswers[currentQuestionIndex] = {
+            countryCode: countryCodeInput.value.trim(),
+            phoneNumber: answerInput.value.trim()
+        };
+    } else {
+        userAnswers[currentQuestionIndex] = answerInput ? answerInput.value.trim() : null;
+    }
+}
+
+
+
+
+document.getElementById("next-quiz").addEventListener("click", function () {
+    const questionData = quizData[selectedCategory][currentQuestionIndex];
+    const answerInput = document.getElementById("quiz-answer");
+
+    if (questionData.type === "choice") {
+        const selectedOption = document.querySelector("input[name='quiz-answer']:checked");
+        if (selectedOption) userAnswers[currentQuestionIndex] = selectedOption.value;
+    } else if (questionData.type === "file") {
+        userAnswers[currentQuestionIndex] = answerInput.files.length > 0 ? answerInput.files[0] : null;
+    } else if (questionData.type === "color") {
+        const stickToLogo = document.getElementById("stick-to-logo").checked;
+        userAnswers[currentQuestionIndex] = stickToLogo ? "Stick to logo color" : answerInput.value;
+    } else {
+        userAnswers[currentQuestionIndex] = answerInput.value.trim();
+    }
+
+    if (userAnswers[currentQuestionIndex]) {
+        if (currentQuestionIndex < quizData[selectedCategory].length - 1) {
+            currentQuestionIndex++;
+            updateQuestion();
+        } else {
+            showSummary();
+        }
+    }
+});
+
+// Back Button
+document.getElementById("back-quiz").addEventListener("click", function () {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        updateQuestion();
+    }
+});
+// Show Summary
+function showSummary() {
+document.getElementById("quiz-modal").style.display = "none";
+const summaryContainer = document.getElementById("quiz-summary");
+
+summaryContainer.innerHTML = quizData[selectedCategory].map((q, i) => {  
+    let answer = userAnswers[i] || "No answer";  
+    if (q.type === "file" && userAnswers[i]) {  
+        answer = userAnswers[i].name;  // Show file name  
+    }  
+    return `<p><strong>${q.question}</strong><br> ${answer}</p>`;  
+}).join("");  
+
+document.getElementById("quiz-summary-modal").style.display = "flex";
+
+}
+
+// Redo Quiz
+document.getElementById("redo-quiz").addEventListener("click", function () {
+document.getElementById("quiz-summary-modal").style.display = "none";
+openQuizModal(selectedCategory);
+});
+
+
+document.getElementById("submit-quiz").addEventListener("click", function () {
+    saveAnswer();  // Ensure last answer is saved before submission
+    console.log("Final Answers:", userAnswers);  // Debugging
+    alert("Quiz Submitted Successfully!");
+});
+
+// Submit Quiz to WhatsApp without affecting the summary popup
+document.getElementById("submit-quiz").addEventListener("click", function () {
+    let message = `Quiz Results for ${selectedCategory}:\n\n`;
+
+    quizData[selectedCategory].forEach((q, index) => {
+        let answer = userAnswers[index];
+
+        if (q.type === "phone" && answer) {
+            answer = `${answer.countryCode} ${answer.phoneNumber}`;
+        } else if (q.type === "file") {
+            answer = answer ? "File uploaded" : "No file uploaded";
+        }
+        
+        message += `${q.question}: ${answer}\n`;
+    });
+
+    // Encode message for WhatsApp URL
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = "254737377851"; // Replace with your actual WhatsApp number
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp with results
+    window.open(whatsappURL, "_blank");
+
+    // Keep the summary modal open and just show success alert
+    alert("Quiz Submitted Successfully!");
+});
+
+// Attach Event Listener to Quiz Button
+document.addEventListener("click", function (event) {
+if (event.target.classList.contains("quiz-button")) {
+const title = document.getElementById("second-modal-title").textContent;
+openQuizModal(title);
+}
+});
+
+// Close Modals
+document.querySelector('.close-quiz-btn').addEventListener('click', function () {
+document.getElementById("quiz-modal").style.display = "none";
+});
+window.addEventListener('click', function (event) {
+const quizModal = document.getElementById("quiz-modal");
+const summaryModal = document.getElementById("quiz-summary-modal");
+if (event.target === quizModal) quizModal.style.display = "none";
+if (event.target === summaryModal) summaryModal.style.display = "none";
+});
+  
+</script>
+
+</html>

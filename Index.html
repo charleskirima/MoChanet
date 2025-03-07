@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoCha</title>
+  <style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121826; /* Deep navy */
+  color: #f0f0f0;
+  margin: 0;
+  padding: 1%;
+  box-sizing: border-box;
+}
+  
+header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps items aligned properly */
+  padding: 15px 5%;
+  background: linear-gradient(90deg, #ff2e63, #252a34);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  top: 0;
+  z-index: 500;
+  border-bottom: 3px solid #08d9d6;
+  height: 60px;
+  width: 90%;
+}
+
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 2%;
+    height: auto;
+    width:97%;
+  }
+}
+
+
+/* Logo Styling */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); /* Futuristic Font */
+
+h1 {
+  font-family: 'Orbitron', sans-serif;  /* Robotic font */
+  font-size: 60px;  /* Bold and prominent */
+  text-transform: uppercase;  /* Adds a futuristic feel */
+  background: linear-gradient(90deg, #fff, #08d9d6); /* Metallic effect */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  /* Chrome-based text gradient */
+  text-align: center;
+  letter-spacing: 4px; /* Spaced-out letters for a digital look */
+  position: relative;
+transform: translateX(-15%);
+}
+
+/* Optional: Glowing Effect for Extra Tech Vibe */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 200px;
+  height: 4px;
+  background: cyan;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px cyan, 0 0 15px rgba(0, 255, 255, 0.8); /* Neon glow */
+  border-radius: 2px;
+}
+
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Navigation Links */
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
+  background: rgba(255, 46, 99, 0.15);
+}
+
+/* Hover Effects for Links */
+nav a:hover {
+  color: #ff2e63;
+  background: rgba(255, 46, 99, 0.3);
+  box-shadow: 0 4px 6px rgba(255, 46, 99, 0.4);
+  transform: scale(1.1);
+}
+
+/* Login Icon Styling */
+nav .login-icon {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background: beige;
+  transition: all 0.3s ease-in-out;
+}
+
+nav .login-icon:hover {
+  background: rgba(255, 46, 99, 0.3);
+  color: #ff2e63;
+  transform: scale(1.2);
+  box-shadow: 0 4px 6px rgba(255, 46, 99, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  nav .login-icon {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav .login-icon {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Light overlay */
+  mix-blend-mode: screen; /* Blends light with dark areas */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 100px 50px;
+  background: url('20250221_131847.jpg') no-repeat center/cover;
+  height: 470px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  
+}
+
+/* Dark Overlay for Better Text Readability */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Styling for the Heading */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 40%;
+max-height: 115%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+
+
+
+
+
+/* 💥 Button on Bottom Right */
+.hero button {
+  position: absolute;
+  bottom: 25px;
+  right: 255px;
+  padding: 15px 35px;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #ff2e63, #08d9d6);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* 💥 Button Hover Effect */
+.hero button:hover {
+  transform: scale(1.1) rotate(2deg);
+  background: linear-gradient(90deg, #08d9d6, #ff2e63);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* 💥 Button Active (Click) Effect */
+.hero button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* 🛠️ Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 50px 20px;
+  }
+
+
+
+  .hero button {
+    position: static;
+    margin: 20px auto 0;
+    display: block;
+  }
+}
+
+
+
+    /* Footer Section */
+    footer {
+      padding: 50px;
+      background: #1a1a1a;
+      text-align: center;
+    }
+/* Footer Containers */
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Clickable Footer Boxes */
+.footer-container {
+  text-align: center;
+  width: 160px;
+  border: 2px solid #ff2e63;
+  border-radius: 15px;
+  padding: 25px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Footer Containers */
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* Clickable Footer Boxes */
+.footer-container {
+  text-align: center;
+  width: 160px;
+  border: 2px solid #ff2e63;
+  border-radius: 15px;
+  padding: 25px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Dark Grey Background for Icons, Red Icons & Thick Blue Border */
+.footer-container .icon {
+  background: #2c2c2c; /* Dark Grey Background */
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #ff2e63; /* Red Icon Color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border: 5px solid #08d9d6; /* Thick Blue Border */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Footer Text Styles */
+.footer-container h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ff2e63;
+}
+
+.footer-container p {
+  font-size: 0.9rem;
+  color: #a9a9a9;
+}
+
+/* Hover Effects */
+.footer-container:hover {
+  background: rgba(255, 46, 99, 0.1);
+  box-shadow: 0px 0px 15px rgba(255, 46, 99, 0.4);
+  transform: scale(1.05);
+}
+
+.footer-container:hover .icon {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(8, 217, 214, 0.5); /* Glow Effect on Hover */
+}
+
+
+/* Footer Text Styles */
+.footer-container h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ff2e63;
+}
+
+.footer-container p {
+  font-size: 0.9rem;
+  color: #a9a9a9;
+}
+
+/* Hover Effects */
+.footer-container:hover {
+  background: rgba(255, 46, 99, 0.1);
+  box-shadow: 0px 0px 15px rgba(255, 46, 99, 0.4);
+  transform: scale(1.05);
+}
+
+.footer-container:hover .icon {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+/* 🛠️ Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-containers {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+}
+
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #a9a9a9;
+    }
+    .footer-bottom span {
+      color: #ff2e63;
+    }
+social-icons {
+    display: flex;
+    gap: 25px;
+    justify-content: center; /* Adjust as needed */
+}
+
+.social-icons a {
+    font-size: 44px; /* Adjust size */
+    color: #f0f0f0; /* Adjust to match your theme */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff4d4d; /* Highlight on hover */
+}
+    
+    
+   /* Footer Containers */
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual Footer Boxes */
+.footer-container {
+  flex: 1;
+  min-width: 220px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #1a1a1a, #000);
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.footer-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+}
+
+/* Icon Styles */
+.icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+  display: block;
+  color: #ff0033;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.9);
+}
+
+/* Social Icons with Neon Glow */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 25px;
+}
+
+.social-icons a {
+  font-size: 30px;
+  color: #ff0033;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Social Icons Container */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  position: relative;
+}
+
+/* Individual Social Icons */
+.social-icons a {
+  font-size: 30px;
+  color: #ff0033;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Hover Effect - Scale & Glow */
+.social-icons a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Tooltip Styling */
+.social-icons a::after {
+  content: attr(data-name); /* Uses the data-name attribute */
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show Tooltip on Hover */
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+ 
+    
+     /* Button Styling */
+.start-project-btn {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #ff2e63, #08d9d6);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.start-project-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 46, 99, 0.7);
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #252a34;
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px;
+  color: white;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 15px rgba(255, 46, 99, 0.7);
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+.close:hover {
+  color: #ff2e63;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form label {
+  text-align: left;
+  font-weight: bold;
+}
+form input, form select, form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+form textarea {
+  height: 80px;
+  resize: none;
+}
+form button {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 1.1rem;
+  background: #ff2e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+form button:hover {
+  background: #08d9d6;
+}
+
+/* Extra Actions */
+.extra-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.extra-options a {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+.consultation {
+  background: #08d9d6;
+  color: white;
+}
+.consultation:hover {
+  background: #ff2e63;
+}
+.whatsapp {
+  background: #25d366;
+  color: white;
+}
+.whatsapp:hover {
+  background: #128c7e;
+}
+ 
+  /* 🔘 Login Icon */
+.login-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
+.login-icon:hover {
+  background: rgba(255, 46, 99, 0.3);
+}
+
+/* 📌 MODAL STYLES */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+/* 📍 MODAL CONTENT */
+.modal-content {
+  background: #252a34;
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 46, 99, 0.5);
+}
+
+/* ❌ Close Button */
+.close-btn {
+  font-size: 1.5rem;
+  color: #ff2e63;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* 🔳 Input Fields */
+.modal-content input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #1b1f27;
+  color: #fff;
+}
+
+/* 🔍 Password Wrapper */
+.password-wrapper {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* 📜 Terms & Conditions */
+.terms {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #fff;
+}
+.terms input {
+  margin-right: 100px;
+}
+.terms a {
+  color: #ff2e63;
+  text-decoration: none;
+}
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* 🚀 Buttons */
+#loginSubmit, #signUpSubmit {
+  width: 100%;
+  padding: 12px;
+  background: #ff2e63;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+#loginSubmit:hover, #signUpSubmit:hover {
+  background: #08d9d6;
+}
+
+/* ✅ SUCCESS POP-UP */
+.success-popup {
+  display: none;
+  position: fixed;
+  bottom: 50%;
+  right: 40%;
+  background: #28a745;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+ /* 🔗 Styling for Links */
+.modal-content a {
+  color: #ff2e63;  /* Red color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.modal-content a:hover {
+  color: #08d9d6; /* Changes to cyan on hover */
+  text-decoration: underline;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.2); /* Subtle highlight */
+  border-radius: 2px;
+}
+
+ 
+.divider {
+  width: 100%;
+  height: 10px; /* Adjust thickness */
+  background: linear-gradient(  
+    to right,  
+    #b8b8b8,  /* Light silver */
+    #e0e0e0,  /* Brighter silver */
+    #b8b8b8,  
+    #707070,  /* Darker metal tone */
+    #b8b8b8,  
+    #e0e0e0,  
+    #b8b8b8  
+  );  
+  border-radius: 6px; /* Slightly rounded edges for realism */
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3),  
+              0 -1px 2px rgba(0, 0, 0, 0.2); /* Light and shadow effect */
+  position: relative;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  40% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  80% { transform: scale(1); }
+  90% { transform: scale(1.02); }
+}
+
+.start-project-btn {
+  animation: heartbeat 4s ease-in-out infinite;
+  animation-delay: 3s;
+}
+/* Footer Background */
+footer {
+  background: linear-gradient(90deg, #0e0e0e, #1a1a1a);
+  padding: 50px 20px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0px -5px 15px rgba(255, 0, 0, 0.4);
+}
+
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+            filter: brightness(0.8) contrast(1.1);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+          /* Main Text Styling */
+        #text-container {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+            color: #fff;
+        }
+
+        /* Static Text */
+        .static-text {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Changing Words */
+        #changing-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00ffcc, #00aaff, #ff00cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Final Message */
+        .final-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ff00cc, #00ffcc, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+        
+                /* Glow Animation */
+        @keyframes glow {
+            0% {
+                filter: brightness(1);
+            }
+            100% {
+                filter: brightness(1.2);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #text-container {
+                font-size: 2rem;
+            }
+            .carousel {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #text-container {
+                font-size: 1.5rem;
+            }
+            .carousel {
+                height: 450px;
+            }
+        }
+            .leob {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    margin: 0;
+}
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+            filter: brightness(0.8) contrast(1.1);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+          /* Main Text Styling */
+        #text-container {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+            color: #fff;
+        }
+
+        /* Static Text */
+        .static-text {
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Changing Words */
+        #changing-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00ffcc, #00aaff, #ff00cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Final Message */
+        .final-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            background: linear-gradient(90deg, #ff00cc, #00ffcc, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+        
+                /* Glow Animation */
+        @keyframes glow {
+            0% {
+                filter: brightness(1);
+            }
+            100% {
+                filter: brightness(1.2);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #text-container {
+                font-size: 2rem;
+            }
+            .carousel {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #text-container {
+                font-size: 1.5rem;
+            }
+            .carousel {
+                height: 450px;
+            }
+        }
+            .leob {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    margin: 0;
+}
+
+/* How We Work */
+.how-we-work {
+    text-align: center;
+    padding: 30px;
+    background: beige;
+    border-radius: 12px;
+    margin: auto;
+}
+
+#work-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-container {
+    display: none;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    text-align: left;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.step-container.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h3 {
+    color: #ff4d4d;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 18px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.next-btn {
+    allign:center;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #003366, #001a33);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.inside-button:hover {
+    opacity: 0.9;
+    transform: scale(1.15);
+}
+
+.cta {
+    background: #ffe5e5;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.cta-button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #cc0000;
+}
+/* Form */
+.quiz-submit {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.quiz-submit:hover {
+    background: #cc0000;
+}
+/* Why Choose MoCha Section */
+.why-choose {
+
+  padding: 60px 20px;
+  background: beige;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.why-choose h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* Feature Grid */
+.why-choose-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Feature Box */
+.feature-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  border-color: #ff4d4d;
+}
+
+/* Feature Icons */
+.feature-box i {
+  font-size: 35px;
+  color: #ff4d4d;
+  margin-bottom: 15px;
+}
+
+/* Feature Short Text */
+.feature-box p {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+/* Hidden Detailed Text */
+.feature-details {
+  
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #666;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+/* Active State */
+.feature-box.active .feature-details {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CTA Button */
+.why-choose .cta-btn {
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #003366, #001a33);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.inside-button:hover {
+    opacity: 0.9;
+    transform: scale(1.15);
+}
+/* Pricing Section Styling */
+.pricing-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f5f5f5; /* Light background */
+}
+
+.pricing-section h2 {
+    font-size: 32px;
+    color: #d1001f; /* MoCha's primary color */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.pricing-section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.pricing-container {
+    display: grid;
+    gap: 25px;
+    justify-content: center;
+    grid-template-columns: repeat(1, minmax(280px, 1fr)); /* Default: 1 per row */
+}
+
+/* Responsive Grid */
+@media (min-width: 768px) {  /* Medium devices */
+    .pricing-container {
+        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* 2 per row */
+    }
+}
+
+@media (min-width: 1024px) { /* Large devices */
+    .pricing-container {
+        grid-template-columns: repeat(4, minmax(280px, 1fr)); /* 4 per row */
+    }
+}
+
+/* Pricing Card */
+.pricing-card {
+    background: white;
+    padding: 25%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-top: 4px solid transparent;
+    position: relative;
+}
+
+.pricing-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #d1001f;
+    margin: 10px 0;
+}
+
+.price span {
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pricing-card li {
+    font-size: 14px;
+    padding: 8px 0;
+    color: #555;
+}
+
+/* Button Styling */
+.btn {
+    background: linear-gradient(135deg, #003366, #001a33);
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 10px; /* Adjust the spacing */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn:hover {
+    background: #333;
+}
+
+/* Highlight Popular Plan */
+.popular {
+    border-top: 4px solid #d1001f;
+    background: #fff5f7;
+    transform: scale(1.05);
+}
+
+/* Hover Effects */
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Styling for the Heading */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 40%;
+max-height: 115%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+
+.hero-text h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.6rem;
+    font-weight: 800;
+    color: #00E0FF; /* Electric Blue from the neon cyberpunk logo */
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px rgba(0, 224, 255, 0.8);
+}
+
+.hero h2 span:nth-child(1) {
+  color: white; /* Clean and readable */
+}
+
+.hero h2 span:nth-child(2) {
+  color: lightblue; /* Soft blue for contrast */
+}
+
+.hero h2 span:nth-child(3) {
+  color: beige; /* Warm tone for balance */
+}
+
+.hero p {
+  color: white; /* Keeps it clean */
+}
+
+
+  </style>
+  
+ <link rel="shortcut icon" href="Ik.png" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+<!-- Header -->
+ <center> 
+<header>
+  <h1>MoCha</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact Us</a>
+<!-- 👤 Login Icon -->
+<span class="login-icon" id="loginIcon">👤</span>
+  </nav>
+</header>
+</center>
+<br>
+ <center>   <div class="divider"></div> <!-- Thick blue line --></center><br>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h2>
+      <span>Let us</span>
+      <span>Build your<br> dreams</span>
+      <span>And ideas.</span>
+    </h2>
+</div>
+<!-- Button to Open Modal -->
+<button class="start-project-btn" onclick="openModal()">Start Your Project</button>
+
+</section><br>
+ <center>   <div class="divider"></div> <!-- Thick blue line --></center>
+
+<!-- Project Inquiry Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Start Your Project</h2>
+    
+    <!-- Inquiry Form -->
+    <form id="projectForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="project-type">Project Type</label>
+      <select id="project-type">
+        <option value="Website">Website</option>
+        <option value="App">App</option>
+        <option value="Game">Game</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="budget">Budget Range</label>
+      <select id="budget">
+        <option value="Below $500">Below $500</option>
+        <option value="$500 - $2000">$500 - $2000</option>
+        <option value="$2000 - $5000">$2000 - $5000</option>
+        <option value="Above $5000">Above $5000</option>
+      </select>
+
+      <label for="description">Project Description</label>
+      <textarea id="description" placeholder="Briefly describe your project..." required></textarea>
+
+      <button type="submit">Submit Inquiry</button>
+    </form>
+
+    <!-- Additional Actions -->
+    <div class="extra-options">
+      <a href="https://calendly.com/mohcharnet/30min" target="_blank" class="consultation">📅 Book a Consultation</a>
+      <a href="https://wa.me/+254737377851?text=Hi! I’m interested in a project with MoCha." target="_blank" class="whatsapp">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- 🟢 LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3>Login</h3>
+    <input type="email" id="loginEmail" placeholder="Email">
+    
+    <div class="password-wrapper">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <span class="toggle-password" onclick="togglePassword('loginPassword')">👁️</span>
+    </div>
+
+  <span>  <button id="loginSubmit">Login</button></span>
+    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="#" id="openSignUp">Sign Up</a></p>
+  </div>
+</div>
+
+<!-- 🔵 SIGN-UP MODAL -->
+<div id="signUpModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3>Sign Up</h3>
+    <input type="text" id="signUpName" placeholder="Full Name">
+    <input type="email" id="signUpEmail" placeholder="Email">
+    <input type="text" id="signUpPhone" placeholder="Phone Number">
+
+    <div class="password-wrapper">
+      <input type="password" id="signUpPassword" placeholder="Create Password">
+      <span class="toggle-password" onclick="togglePassword('signUpPassword')">👁️</span>
+    </div>
+
+    <div class="password-wrapper">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" id="termsCheckbox">
+      <label for="termsCheckbox">I agree to the <a href="#">Terms & Conditions</a></label>
+    </div>
+
+    <button id="signUpSubmit">Sign Up</button>
+    <p>Already have an account? <a href="#" id="openLogin">Login</a></p>
+  </div>
+</div>
+
+<!-- ✅ SUCCESS MESSAGE POP-UP -->
+<div id="successPopup" class="success-popup">
+  <p id="successMessage"></p>
+</div>
+
+<br>
+    <section class="carousel-container45">
+        <div class="carousel">
+            <img id="carousel-image" src="image1.jpg" alt="Carousel Image 1">
+            <div class="overlay">
+                <div id="text-container">
+                    <span class="static-text">We don’t just</span> 
+                    <span id="changing-text">create Websites</span>, 
+                    <span class="static-text">we build experiences.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    
+          <div class="leob">
+<!-- How We Work Section -->
+<section class="how-we-work">
+    <h2>How We Work</h2>
+    <div id="work-steps">
+        <div class="step-container active" id="step1">
+            <h3>💡 Idea & Strategy</h3>
+            <p>You bring your vision, we refine it into a structured plan.</p>
+            <ul>
+                <li><b>Understand Your Vision</b> – Deep dive into your idea, goals, and expectations.</li>
+                <li><b>Discuss Goals & Requirements</b>– Define what success looks like and what’s needed to achieve it.</li>
+                <li><b> Market Research & Feasibility </b>- Analyze competitors, target audience, and market demand.</li>
+                <li><b> Define Clear Strategy </b>- Outline steps, milestones, and execution plans.</li>
+                <li><b>Identify Challenges & Risks</b> – Anticipate obstacles and create contingency plans.</li>
+                <li><b>Budget & Resource Planning</b> – Align financial and technical resources for optimal execution.</li>
+                <li><b>Technology & Tools Selection</b> – Choose the best tech stack or platform for scalability.</li>
+                <li><b>User Experience (UX) & Design Thinking</b> – Ensure a user-friendly, engaging, and accessible experience.</li>
+                <li><b>Prototype & Validation</b> – Develop wireframes or MVPs to test the concept.</li>
+                <li><b>Refinement & Execution Plan</b> – Finalize strategy with a clear roadmap for development and deployment.</li>
+            </ul>
+            <button class="next-btn" onclick="nextStep(2)">Next</button>
+        </div>
+
+        <div class="step-container" id="step2">
+            <h3>🎨 Design & Development</h3>
+            <p>We craft modern, stunning solutions that match your brand.</p>
+            <ul>
+<li> <b>Wireframing & UI/UX Design</b> – Create intuitive layouts and user-friendly experiences.</li>
+<li> <b>Brand Identity Integration</b> – Ensure design aligns with your brand’s style and vision.</li>  
+<li> <b>Responsive Design</b> – Optimize for all devices (mobile, tablet, desktop).  </li>
+<li> <b>Full-Stack Development</b> – Implement both front-end and back-end functionalities.  </li>
+<li> <b>Agile Development Process</b> – Use iterative cycles for faster, more flexible improvements. </li> 
+<li><b>SEO & Performance Optimization</b> – Ensure fast load times and search engine visibility.  </li>
+<li><b>Security Best Practices</b> – Implement encryption, authentication, and protection against vulnerabilities.</li>  
+<li><b>Scalability Planning</b> – Develop solutions that grow with your business.  </li>
+<li><b>Third-Party Integrations</b> – Connect APIs, payment gateways, and external tools.  </li>
+<li><b>Cross-Browser & Cross-Platform Testing</b> – Ensure seamless performance across all environments.  </li>
+            </ul>
+            <button class="next-btn" onclick="nextStep(3)">Next</button>
+        </div>
+
+        <div class="step-container" id="step3">
+            <h3>🛠 Testing & Perfection</h3>
+            <p>We ensure top performance and smooth user experience.</p>
+            <ul>
+<li> <b>Bug Testing & Debugging</b> – Identify and fix issues for a flawless experience. </li> 
+<li> <b>User Feedback & Iterations</b> – Gather insights to improve usability.  </li>
+<li><b>Performance Optimization</b> – Enhance speed, responsiveness, and efficiency.  </li>
+<li><b>Cross-Device Testing</b> – Ensure compatibility across various screen sizes.  </li>
+<li><b>Security Audits & Penetration Testing</b> – Protect against cyber threats.  </li>
+<li><b>Load & Stress Testing</b> – Test system stability under heavy traffic.  </li>
+<li><b>Accessibility Compliance</b> – Make the platform user-friendly for all, including those with disabilities.</li>  
+<li><b>Code Review & Optimization</b> – Ensure clean, maintainable, and efficient code.  </li>
+<li><b>Data Backup & Recovery Plans</b> – Implement strategies to prevent data loss.  </li>
+<li><b>Final Approval & Pre-Launch Checks</b> – Ensure everything is polished before going live.  </li>
+            </ul>
+            <button class="next-btn" onclick="nextStep(4)">Next</button>
+        </div>
+
+        <div class="step-container" id="step4">
+            <h3>🚀 Launch & Support</h3>
+            <p>We help you scale & grow after launch.</p>
+            <ul>
+<li> <b>Deployment & Hosting Setup</b> – Ensure a smooth transition to live servers. </li> 
+<li> <b>Domain & SSL Setup</b> – Secure and establish your online presence.  </li>
+<li><b>Ongoing Maintenance & Updates</b> – Keep the system updated and bug-free. </li> 
+<li> <b>Marketing & SEO Strategies</b> – Improve visibility and attract users.</li>  
+<li><b>Scalability & Growth Planning</b> – Prepare for increasing demand.  </li>
+<li> <b>Analytics & Performance Tracking</b> – Monitor engagement and site performance.  </li>
+<li><b>Customer Support & Troubleshooting</b> – Provide assistance for issues post-launch. </li> 
+<li><b>Feature Enhancements & Upgrades</b> – Improve and expand based on feedback.  </li>
+<li><b>Security Monitoring & Patching</b> – Continuously safeguard against threats.  </li>
+<li> <b>Community & Social Media Engagement</b> – Build brand loyalty and interaction. </li> 
+
+            </ul>
+<button class="next-btn" onclick="window.open('https://calendly.com/mohcharnet/30min', '_blank')">
+    📅 Book a Consultation?
+</button>
+
+            
+            
+
+        </div>
+    </div>
+    
+
+</section>
+<br>
+<section class="why-choose">
+  <h3>Why Choose MoCha?</h3>
+  <div class="why-choose-features">
+
+    <div class="feature-box">
+      <i class="fas fa-bolt"></i>
+      <p>🚀 Fast Turnaround</p>
+      <div class="feature-details">We deliver high-quality websites, apps, and games **quickly** without sacrificing performance.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-cogs"></i>
+      <p>💡 Custom Solutions</p>
+      <div class="feature-details">Every project is **tailored** to your brand, ensuring a unique and engaging user experience.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-phone"></i>
+      <p>📞 Always Available</p>
+      <div class="feature-details">We provide **fast support** via WhatsApp, email, and direct consultations, ensuring smooth communication.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-shield-alt"></i>
+      <p>🔒 Secure & Reliable</p>
+      <div class="feature-details">We prioritize **security** and **data protection**, so your site/app is safe from threats.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-chart-line"></i>
+      <p>🎯 Results-Driven</p>
+      <div class="feature-details">We optimize for **performance, user experience, and conversion rates**, delivering real value.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-lightbulb"></i>
+      <p>📈 Growth-Focused</p>
+      <div class="feature-details">We help businesses scale with innovative, data-driven solutions.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-people-arrows"></i>
+      <p>🤝 Client-Centric</p>
+      <div class="feature-details">We work closely with clients, ensuring their vision is fully realized.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-code"></i>
+      <p>🛠 Cutting-Edge Tech</p>
+      <div class="feature-details">We use the latest frameworks and technologies to build modern solutions.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-money-bill-wave"></i>
+      <p>💰 Cost-Effective</p>
+      <div class="feature-details">We offer high-quality services at **competitive prices**, ensuring you get the best value.</div>
+    </div>
+
+    <div class="feature-box">
+      <i class="fas fa-trophy"></i>
+      <p>🏆 Proven Track Record</p>
+      <div class="feature-details">Our expertise and successful projects speak for themselves.</div>
+    </div>
+
+
+
+  </div><br><br>
+  <a href="services.html" class="cta-btn">Get Started</a>
+</section>
+
+</div>
+<br>
+<section class="pricing-section">
+    <h2>💰 Flexible Pricing for Every Business</h2>
+    <p>We provide high-quality websites, apps, and games at competitive prices. Choose a plan that fits your needs.</p>
+
+<div class="pricing-container">
+    <!-- Basic Plan -->
+    <div class="pricing-card">
+        <h3>🚀 Basic</h3>
+        <p class="price">$199 <span>/ One-Time</span></p>
+        <ul>
+            <li>✔ Website/App/Game Development</li>
+            <li>✔ Responsive & Mobile-Friendly Design</li>
+            <li>✔ Custom Features</li>
+            <li>✖ E-Commerce & Payment Integration</li>
+            <li>✖ SEO & App Store Optimization (ASO)</li>
+            <li>✔ Speed Optimization</li>
+            <li>✔ Social Media Integration</li>
+            <li>✖ Security Enhancements</li>
+            <li>✖ Support & Maintenance</li>
+        </ul>
+        <button class="btn" onclick="openModal()">Get Started</button>
+    </div>
+
+    <!-- Standard Plan -->
+    <div class="pricing-card popular">
+        <h3>⭐ Standard</h3>
+        <p class="price">$399 <span>/ One-Time</span></p>
+        <ul>
+            <li>✔ Website/App/Game Development</li>
+            <li>✔ Responsive & Mobile-Friendly Design</li>
+            <li>✔ Custom Features</li>
+            <li>✔ E-Commerce & Payment Integration</li>
+            <li>✔ SEO & App Store Optimization (ASO)</li>
+            <li>✔ Speed Optimization</li>
+            <li>✔ Social Media & API Integration</li>
+            <li>✔ Security Enhancements & Data Protection</li>
+            <li>✔ Custom Forms & Contact Pages</li>
+            <li>✔ Web Hosting & Domain Setup</li>
+            <li>✔ Analytics & Performance Tracking</li>
+            <li>✔ AI Chatbot & Live Chat Support</li>
+            <li>🛠 3 Months Support & Maintenance</li>
+        </ul>
+        <br>
+        <button class="btn" onclick="openModal()">Get Started</button>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="pricing-card">
+        <h3>💎 Premium</h3>
+        <p class="price">$599 <span>/ One-Time</span></p>
+        <ul>
+            <li>✔ Website/App/Game Development</li>
+            <li>✔ Responsive & Mobile-Friendly Design</li>
+            <li>✔ Custom Features & Advanced Functionality</li>
+            <li>✔ E-Commerce & Subscription Models</li>
+            <li>✔ SEO & App Store Optimization (ASO)</li>
+            <li>✔ Speed & Performance Optimization</li>
+            <li>✔ Social Media & API Integrations</li>
+            <li>✔ Security & Data Protection</li>
+            <li>✔ Analytics, Tracking & User Insights</li>
+            <li>✔ AI Chatbot & Live Chat Integration</li>
+            <li>✔ Multi-Language & Localization Support</li>
+            <li>✔ In-App Purchases & Monetization Setup</li>
+
+            <li>✔ Custom Animations & Interactive Elements</li>
+            <li>✔ Cloud Hosting & Scalability</li>
+            <li>🛠 6 Months Support & Maintenance</li>
+        </ul>
+        <br>
+        <button class="btn" onclick="openModal()">Get Started</button>
+    </div>
+
+    <!-- Custom Plan -->
+    <div class="pricing-card">
+        <h3>🎯 Custom</h3>
+        <p class="price">Contact Us</p>
+        <ul>
+            <li>✔ Tailored Solutions</li>
+            <li>✔ Advanced Features & Custom Development</li>
+            <li>✔ Marketing & Growth Strategies</li>
+            <li>✔ Blockchain & Web3 Integration</li>
+            <li>✔ Augmented Reality (AR) & Virtual Reality (VR) Features</li>
+            <li>✔ Custom APIs & Automation Solutions</li>
+            <li>✔ Ongoing Support & Scaling</li>
+            <li>✔ Custom Backend Development & Database Management</li>
+            <li>✔ Cloud Computing & Server Management</li>
+            <li>✔ Custom Dashboards & Admin Panels</li>
+            <li>✔ Cross-Platform Compatibility & Optimization</li>
+            <li>✔ Enterprise-Grade Security & Compliance</li>
+            <li>✔ AI-Powered Recommendations & Personalization</li>
+            <li>✔ Continuous Performance Optimization & Updates</li>
+        </ul>
+        <br>
+        <button class="btn" onclick="window.location.href='mailto:mohcharnet@gmail.com?subject=Quote Request.&body=Hello, I would like to...'">Request a Quote</button>
+    </div>
+</div>
+
+</section>
+
+  <!-- Footer -->
+<footer>
+  <div class="footer-containers">
+    <a href="index.html" class="footer-container">
+      <div class="icon">🏠</div>
+      <h3>Home</h3>
+      <p>Return to our homepage and explore what we have to offer.</p>
+    </a>
+    <a href="services.html" class="footer-container">
+      <div class="icon">🔧</div>
+      <h3>Services</h3>
+      <p>Discover our range of services, from web development to app creation.</p>
+    </a>
+    <a href="portfolio.html" class="footer-container">
+      <div class="icon">📂</div>
+      <h3>Portfolio</h3>
+      <p>Take a look at our completed projects and past work.</p>
+    </a>
+    <a href="contact.html" class="footer-container">
+      <div class="icon">📞</div>
+      <h3>Contact Us</h3>
+      <p>Reach out to us for inquiries, collaborations, or support.</p>
+    </a>
+  </div>
+
+
+<div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=100054273770098" data-name="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/KinyuaKirima" data-name="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/mocha.dev/" data-name="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/+254737377851" data-name="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <div class="footer-bottom">
+      <p><span>Terms of Service</span> | Powered by <span>MoCha</span></p>
+       <p>&copy; 2025 MoCha. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+
+<script>
+  
+ // Open Modal
+function openModal() {
+  document.getElementById("projectModal").style.display = "flex";
+}
+
+// Close Modal
+function closeModal() {
+  document.getElementById("projectModal").style.display = "none";
+}
+
+// Close Modal when Clicking Outside
+window.onclick = function(event) {
+  let modal = document.getElementById("projectModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+document.getElementById("projectForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let projectType = document.getElementById("project-type").value.trim();
+    let budget = document.getElementById("budget").value.trim();
+    let description = document.getElementById("description").value.trim();
+
+    // Validate Input
+    if (name === "" || email === "" || description === "") {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    // Simulate Sending Data (Replace with actual backend integration)
+    console.log("Project Inquiry Submitted:", {
+        name, email, projectType, budget, description
+    });
+
+    // Show Confirmation Message
+    alert("Thank you! Your project inquiry has been submitted. We'll get back to you soon.");
+
+    // Close Modal & Reset Form
+    closeModal();
+    document.getElementById("projectForm").reset();
+
+    // WhatsApp Integration
+    let phoneNumber = "254737377851"; // Ensure this is in the correct format without spaces
+    let message = `Hello, I would like to inquire about a project:\n\n` +
+                  `👤 Name: ${name}\n` +
+                  `📧 Email: ${email}\n` +
+                  `📌 Project Type: ${projectType}\n` +
+                  `💰 Budget: ${budget}\n` +
+                  `📝 Description: ${description}`;
+
+    let encodedMessage = encodeURIComponent(message);
+    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappURL, "_blank");
+});
+ 
+// Get elements
+const loginIcon = document.getElementById("loginIcon");
+const loginModal = document.getElementById("loginModal");
+const signUpModal = document.getElementById("signUpModal");
+const closeButtons = document.querySelectorAll(".close-btn");
+const openSignUp = document.getElementById("openSignUp");
+const openLogin = document.getElementById("openLogin");
+const successPopup = document.getElementById("successPopup");
+const successMessage = document.getElementById("successMessage");
+
+// Open Login Modal
+loginIcon.addEventListener("click", () => {
+  loginModal.style.display = "flex";
+});
+
+// Open Sign-Up Modal from Login
+openSignUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginModal.style.display = "none";
+  signUpModal.style.display = "flex";
+});
+
+// Open Login Modal from Sign-Up
+openLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  signUpModal.style.display = "none";
+  loginModal.style.display = "flex";
+});
+
+// Close Modals
+closeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    loginModal.style.display = "none";
+    signUpModal.style.display = "none";
+  });
+});
+
+// Password Toggle
+function togglePassword(id) {
+  const field = document.getElementById(id);
+  field.type = field.type === "password" ? "text" : "password";
+}
+
+// Validate & Show Success Message
+function showSuccess(message) {
+  successMessage.innerText = message;
+  successPopup.style.display = "block";
+  setTimeout(() => {
+    successPopup.style.display = "none";
+  }, 3000);
+}
+
+// Handle Sign-Up
+document.getElementById("signUpSubmit").addEventListener("click", () => {
+  const name = document.getElementById("signUpName").value;
+  const email = document.getElementById("signUpEmail").value;
+  const phone = document.getElementById("signUpPhone").value;
+  const password = document.getElementById("signUpPassword").value;
+  const confirm = document.getElementById("confirmPassword").value;
+  const terms = document.getElementById("termsCheckbox").checked;
+
+  if (name && email && phone && password && confirm && terms) {
+    if (password === confirm) {
+      signUpModal.style.display = "none";
+      showSuccess("Successfully Signed Up!");
+    } else {
+      alert("Passwords do not match!");
+    }
+  } else {
+    alert("Please fill all fields & accept Terms!");
+  }
+});
+ document.addEventListener("DOMContentLoaded", () => {
+    const images = ["Hy.webp", "Kl.webp", "Uis.webp", "Gh.webp", "Dh.webp"];
+    
+    
+    
+    const texts = [
+        `We don’t just <span id="changing-text">create websites</span>, we build experiences.`,
+        `<span class="final-text">IF YOU CAN DREAM IT,<br> WE CAN CREATE IT.</span>`,
+        `We don’t just <span id="changing-text">create apps</span>, we build experiences.`,
+        `<span class="final-text">IF YOU CAN DREAM IT,<br> WE CAN CREATE IT.</span>`,
+        `We don’t just <span id="changing-text">create games</span>, we build experiences.`
+    ];
+
+    let index = 0;
+    const imageElement = document.getElementById("carousel-image");
+    const textContainer = document.getElementById("text-container");
+
+    function updateCarousel() {
+        imageElement.style.opacity = "0";
+        textContainer.style.opacity = "0";
+
+        setTimeout(() => {
+            imageElement.src = images[index];
+            textContainer.innerHTML = texts[index]; 
+
+            imageElement.style.opacity = "1";
+            textContainer.style.opacity = "1";
+
+            index = (index + 1) % images.length;
+        }, 500); // Fade transition delay
+    }
+
+    // Initial display
+    imageElement.src = images[0];
+    textContainer.innerHTML = texts[0];
+
+    // Start rotation after 5 seconds and loop every 5 seconds
+    setTimeout(() => {
+        setInterval(updateCarousel, 5000);
+    }, 5000);
+});
+
+
+function nextStep(step) {
+    // Hide all steps
+    document.querySelectorAll('.step-container').forEach(container => {
+        container.classList.remove('active');
+    });
+
+    // Show the next step
+    document.getElementById('step' + step).classList.add('active');
+}
+
+function closeSteps() {
+    alert("You've completed the process!");
+}
+
+function openQuiz() {
+    document.getElementById("quiz-modal").style.display = "block";
+}
+
+function closeQuiz() {
+    document.getElementById("quiz-modal").style.display = "none";
+}
+
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Your idea has been submitted! We will review it soon.");
+    closeQuiz();
+});
+
+
+
+</script>
+
+</html>
